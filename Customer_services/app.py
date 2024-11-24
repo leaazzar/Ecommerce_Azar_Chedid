@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from db import db
 from routes import customers_bp
 
@@ -20,7 +20,18 @@ def create_app():
     def health_check():
         return {"status": "ok"}, 200
 
-   
+    # Global error handlers
+    @app.errorhandler(404)
+    def not_found_error(error):
+        return jsonify({"error": "Resource not found"}), 404
+
+    @app.errorhandler(500)
+    def internal_server_error(error):
+        return jsonify({"error": "Internal server error"}), 500
+
+    @app.errorhandler(400)
+    def bad_request_error(error):
+        return jsonify({"error": "Bad request"}), 400
 
     return app
 
@@ -30,7 +41,6 @@ if __name__ == '__main__':
 
     print("Registered Routes:")
     print(app.url_map)
-
 
     # Create tables within the app context
     with app.app_context():
