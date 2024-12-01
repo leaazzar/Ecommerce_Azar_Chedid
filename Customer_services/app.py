@@ -53,10 +53,6 @@ if __name__ == '__main__':
     print(f"Logging to: {log_file_path}")
     app = create_app()
 
-    print("Registered Routes:")
-    print(app.url_map)
-    logging.info("Registered routes printed.")
-
     # Create tables within the app context
     with app.app_context():
         db.create_all()
