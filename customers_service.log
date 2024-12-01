@@ -1,0 +1,59 @@
+2024-11-30 11:05:05,893 - INFO - Registered routes printed.
+2024-11-30 11:05:05,893 - INFO - Database tables initialized.
+2024-11-30 11:05:05,920 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.111:5001
+2024-11-30 11:05:05,920 - INFO - [33mPress CTRL+C to quit[0m
+2024-11-30 11:05:10,800 - INFO - Fetched all customers.
+2024-11-30 11:05:10,802 - INFO - 127.0.0.1 - - [30/Nov/2024 11:05:10] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-11-30 11:05:24,032 - INFO - Received request to delete customer: pia123
+2024-11-30 11:05:24,048 - INFO - Deleting customer: pia123 | Details: <Customer pia123>
+2024-11-30 11:05:24,066 - INFO - Customer deleted successfully: pia123
+2024-11-30 11:05:24,073 - INFO - 127.0.0.1 - - [30/Nov/2024 11:05:24] "DELETE /api/v1/customers/pia123 HTTP/1.1" 200 -
+2024-11-30 11:06:13,297 - INFO - Customer registered successfully: pia123
+2024-11-30 11:06:13,297 - INFO - 127.0.0.1 - - [30/Nov/2024 11:06:13] "[35m[1mPOST /api/v1/customers HTTP/1.1[0m" 201 -
+2024-11-30 11:10:42,324 - INFO - Customer registered successfully: azarlea
+2024-11-30 11:10:42,324 - INFO - 127.0.0.1 - - [30/Nov/2024 11:10:42] "[35m[1mPOST /api/v1/customers HTTP/1.1[0m" 201 -
+2024-11-30 11:10:50,304 - INFO - Fetched all customers.
+2024-11-30 11:10:50,304 - INFO - 127.0.0.1 - - [30/Nov/2024 11:10:50] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-11-30 11:11:25,693 - INFO - Received request to charge wallet for customer: pia123
+2024-11-30 11:11:25,693 - INFO - Charging $20.0 to customer wallet: pia123 | Current balance: 0.0
+2024-11-30 11:11:25,718 - INFO - Successfully charged $20.0 to wallet of customer: pia123 | New balance: 20.0
+2024-11-30 11:11:25,718 - INFO - 127.0.0.1 - - [30/Nov/2024 11:11:25] "POST /api/v1/customers/pia123/charge HTTP/1.1" 200 -
+2024-11-30 11:11:29,685 - INFO - Fetched all customers.
+2024-11-30 11:11:29,685 - INFO - 127.0.0.1 - - [30/Nov/2024 11:11:29] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-11-30 11:15:19,162 - INFO - Customer fetched by username: pia123
+2024-11-30 11:15:19,162 - INFO - 127.0.0.1 - - [30/Nov/2024 11:15:19] "GET /api/v1/customers/pia123 HTTP/1.1" 200 -
+2024-11-30 11:18:59,414 - INFO - Updating customer: pia123 | Initial Data: <Customer pia123>
+2024-11-30 11:18:59,414 - INFO - Updating age for pia123: 21
+2024-11-30 11:18:59,438 - INFO - Customer updated successfully: pia123 | Updated Data: <Customer pia123>
+2024-11-30 11:18:59,438 - INFO - 127.0.0.1 - - [30/Nov/2024 11:18:59] "PUT /api/v1/customers/pia123 HTTP/1.1" 200 -
+2024-11-30 11:20:25,472 - INFO - Fetched all customers.
+2024-11-30 11:20:25,480 - INFO - 127.0.0.1 - - [30/Nov/2024 11:20:25] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-11-30 11:20:56,695 - INFO - Received request to delete customer: leaazar
+2024-11-30 11:20:56,695 - WARNING - Customer not found for deletion: leaazar
+2024-11-30 11:20:56,695 - INFO - 127.0.0.1 - - [30/Nov/2024 11:20:56] "[33mDELETE /api/v1/customers/leaazar HTTP/1.1[0m" 404 -
+2024-11-30 11:21:13,496 - INFO - Received request to delete customer: azarlea
+2024-11-30 11:21:13,496 - INFO - Deleting customer: azarlea | Details: <Customer azarlea>
+2024-11-30 11:21:13,521 - INFO - Customer deleted successfully: azarlea
+2024-11-30 11:21:13,522 - INFO - 127.0.0.1 - - [30/Nov/2024 11:21:13] "DELETE /api/v1/customers/azarlea HTTP/1.1" 200 -
+2024-11-30 11:22:18,658 - INFO - Received request to charge wallet for customer: pia123
+2024-11-30 11:22:18,658 - INFO - Charging $50.0 to customer wallet: pia123 | Current balance: 20.0
+2024-11-30 11:22:18,674 - INFO - Successfully charged $50.0 to wallet of customer: pia123 | New balance: 70.0
+2024-11-30 11:22:18,674 - INFO - 127.0.0.1 - - [30/Nov/2024 11:22:18] "POST /api/v1/customers/pia123/charge HTTP/1.1" 200 -
+2024-11-30 11:23:28,390 - INFO - Updating customer: pia123 | Initial Data: <Customer pia123>
+2024-11-30 11:23:28,390 - INFO - Updating age for pia123: 20
+2024-11-30 11:23:28,415 - INFO - Customer updated successfully: pia123 | Updated Data: <Customer pia123>
+2024-11-30 11:23:28,415 - INFO - 127.0.0.1 - - [30/Nov/2024 11:23:28] "PUT /api/v1/customers/pia123 HTTP/1.1" 200 -
+2024-11-30 11:23:35,060 - INFO - Fetched all customers.
+2024-11-30 11:23:35,060 - INFO - 127.0.0.1 - - [30/Nov/2024 11:23:35] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-11-30 11:23:45,750 - INFO - Customer fetched by username: pia123
+2024-11-30 11:23:45,750 - INFO - 127.0.0.1 - - [30/Nov/2024 11:23:45] "GET /api/v1/customers/pia123 HTTP/1.1" 200 -
+2024-11-30 11:23:56,622 - INFO - Received request to deduct from wallet for customer: carlxx
+2024-11-30 11:23:56,622 - WARNING - Customer not found: carlxx
+2024-11-30 11:23:56,630 - INFO - 127.0.0.1 - - [30/Nov/2024 11:23:56] "[33mPOST /api/v1/customers/carlxx/deduct HTTP/1.1[0m" 404 -
+2024-11-30 11:24:06,702 - INFO - Received request to deduct from wallet for customer: pia123
+2024-11-30 11:24:06,702 - INFO - Deducting $30.0 from customer wallet: pia123 | Current balance: 70.0
+2024-11-30 11:24:06,727 - INFO - Successfully deducted $30.0 from wallet of customer: pia123 | New balance: 40.0
+2024-11-30 11:24:06,727 - INFO - 127.0.0.1 - - [30/Nov/2024 11:24:06] "POST /api/v1/customers/pia123/deduct HTTP/1.1" 200 -
