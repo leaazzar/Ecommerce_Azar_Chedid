@@ -1,0 +1,42 @@
+
+services:
+  customers_service:
+    build: ./Customer_services
+    ports:
+      - "5001:5001"  # Maps host port 5001 to container port 5001
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./Customer_services:/app
+  inventory_service:
+    build: ./Inventory_service
+    ports:
+      - "5002:5002"  # Maps host port 5002 to container port 5002
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./Inventory_service:/app
+  sales_service:
+    build: ./Sales
+    ports:
+      - "5003:5003"  
+    depends_on:
+      - customers_service
+      - inventory_service
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./Sales:/app
+  reviews_service:
+    build: ./Reviews_service
+    ports:
+      - "5000:5000"  # Maps host port 5003 to container port 5003
+    depends_on:
+      - sales_service
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./Reviews_service:/app
+networks:
+  ecommerce_network:
+    driver: bridge

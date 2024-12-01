@@ -9,13 +9,8 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-customers_bp = Blueprint('customers', __name__)
+customers_bp = Blueprint('customers_bp', __name__)
 
-# Utility function to validate input
-def validate_input(data, required_fields):
-    for field in required_fields:
-        if not data.get(field):
-            raise ValueError(f"{field} is required.")
 
 @customers_bp.route('/customers', methods=['POST'])
 def register_customer():
@@ -67,6 +62,7 @@ def register_customer():
         return {"message": "Customer registered successfully"}, 201
 
     except Exception as e:
+
         logging.error(f"Error while registering customer: {e}")
         return {"error": f"An unexpected error occurred: {str(e)}"}, 500
 
@@ -79,6 +75,7 @@ def get_all_customers():
             return {"message": "No customers found."}, 200
 
         logging.info("Fetched all customers.")
+
         return jsonify([{
             "id": c.id,
             "full_name": c.full_name,
@@ -87,8 +84,10 @@ def get_all_customers():
         } for c in customers]), 200
 
     except Exception as e:
+
         logging.error(f"Error while fetching all customers: {e}")
         return {"error": f"An unexpected error occurred: {str(e)}"}, 500
+
 
 
 @customers_bp.route('/customers/<username>', methods=['GET'])
@@ -115,30 +114,23 @@ def get_customer_by_username(username):
 def update_customer(username):
     try:
         data = request.json
-
-        # Input validation: Ensure the request body is valid
         if not data or not isinstance(data, dict):
             logging.warning(f"Invalid request body for updating customer: {username}")
             return {"error": "Invalid JSON or empty request body."}, 400
 
-        # Query the customer by username
         customer = Customer.query.filter_by(username=username).first()
         if not customer:
             logging.warning(f"Customer not found for update: {username}")
             return {"error": "Customer not found."}, 404
-
         # Log initial customer data before update
         logging.info(f"Updating customer: {username} | Initial Data: {customer}")
 
-        # Validate and update fields
         if 'full_name' in data:
             logging.info(f"Updating full_name for {username}: {data['full_name']}")
             customer.full_name = data['full_name']
-        
         if 'password' in data:
             logging.info(f"Updating password for {username}")
             customer.password = data['password']
-        
         if 'age' in data:
             try:
                 age = int(data['age'])
@@ -150,29 +142,24 @@ def update_customer(username):
             except ValueError:
                 logging.warning(f"Invalid age format for {username}: {data['age']}")
                 return {"error": "Age must be a valid integer."}, 400
-
         if 'address' in data:
             logging.info(f"Updating address for {username}: {data['address']}")
             customer.address = data['address']
-        
         if 'gender' in data:
             if data['gender'] not in ['Male', 'Female', 'Other']:
                 logging.warning(f"Invalid gender value for {username}: {data['gender']}")
                 return {"error": "Gender must be 'Male', 'Female', or 'Other'."}, 400
             logging.info(f"Updating gender for {username}: {data['gender']}")
             customer.gender = data['gender']
-        
         if 'marital_status' in data:
             logging.info(f"Updating marital_status for {username}: {data['marital_status']}")
             customer.marital_status = data['marital_status']
 
-        # Commit the updates
         db.session.commit()
         logging.info(f"Customer updated successfully: {username} | Updated Data: {customer}")
         return {"message": "Customer updated successfully"}, 200
 
     except Exception as e:
-        # Rollback in case of an error
         db.session.rollback()
         logging.error(f"Error updating customer: {username} | Error: {e}")
         return {"error": "An unexpected error occurred. Please try again later."}, 500
@@ -214,13 +201,11 @@ def charge_wallet(username):
         # Log the request
         logging.info(f"Received request to charge wallet for customer: {username}")
 
-        # Validate the request body
         data = request.json
         if not data or not isinstance(data, dict):
             logging.warning(f"Invalid JSON or empty request body for customer: {username}")
             return {"error": "Invalid JSON or empty request body."}, 400
 
-        # Validate the 'amount' field
         amount = data.get('amount')
         if amount is None:
             logging.warning(f"Amount field missing in request for customer: {username}")
@@ -234,12 +219,10 @@ def charge_wallet(username):
             logging.warning(f"Non-numeric amount provided for customer: {username}")
             return {"error": "Amount must be a valid number."}, 400
 
-        # Check if customer exists
         customer = Customer.query.filter_by(username=username).first()
         if not customer:
             logging.warning(f"Customer not found: {username}")
             return {"error": "Customer not found."}, 404
-
         # Log the charging process
         logging.info(f"Charging ${amount} to customer wallet: {username} | Current balance: {customer.wallet}")
 
@@ -251,31 +234,37 @@ def charge_wallet(username):
         logging.info(f"Successfully charged ${amount} to wallet of customer: {username} | New balance: {customer.wallet}")
 
         # Return a success response
+
+        customer.wallet += amount
+        db.session.commit()
+
         return {"message": f"${amount} added to wallet."}, 200
 
     except Exception as e:
-        # Rollback the transaction in case of errors
         db.session.rollback()
+
 
         # Log the error
         logging.error(f"Error while charging wallet for customer: {username} | Error: {e}")
 
         # Return a generic error response
+
         return {"error": "An unexpected error occurred. Please try again later."}, 500
 
 @customers_bp.route('/customers/<username>/deduct', methods=['POST'])
 def deduct_wallet(username):
     try:
+
         # Log the request
         logging.info(f"Received request to deduct from wallet for customer: {username}")
 
         # Validate the request body
+
         data = request.json
         if not data or not isinstance(data, dict):
             logging.warning(f"Invalid JSON or empty request body for customer: {username}")
             return {"error": "Invalid JSON or empty request body."}, 400
 
-        # Validate the 'amount' field
         amount = data.get('amount')
         if amount is None:
             logging.warning(f"Amount field missing in request for customer: {username}")
@@ -289,16 +278,15 @@ def deduct_wallet(username):
             logging.warning(f"Non-numeric amount provided for customer: {username}")
             return {"error": "Amount must be a valid number."}, 400
 
-        # Check if customer exists
         customer = Customer.query.filter_by(username=username).first()
         if not customer:
             logging.warning(f"Customer not found: {username}")
             return {"error": "Customer not found."}, 404
 
-        # Check if the wallet has sufficient funds
         if customer.wallet < amount:
             logging.warning(f"Insufficient funds: Attempt to deduct ${amount} from customer: {username} with wallet balance: {customer.wallet}")
             return {"error": "Insufficient funds in wallet."}, 400
+
 
         # Deduct the amount from the wallet
         logging.info(f"Deducting ${amount} from customer wallet: {username} | Current balance: {customer.wallet}")
@@ -309,14 +297,21 @@ def deduct_wallet(username):
         logging.info(f"Successfully deducted ${amount} from wallet of customer: {username} | New balance: {customer.wallet}")
 
         # Return success response
+
+        customer.wallet -= amount
+        db.session.commit()
+
         return {"message": f"${amount} deducted from wallet."}, 200
 
     except Exception as e:
-        # Rollback the transaction in case of errors
         db.session.rollback()
+
 
         # Log the error
         logging.error(f"Error while deducting wallet for customer: {username} | Error: {e}")
 
         # Return a generic error response
         return {"error": "An unexpected error occurred. Please try again later."}, 500
+
+        return {"error": "An unexpected error occurred. Please try again later."}, 500
+
