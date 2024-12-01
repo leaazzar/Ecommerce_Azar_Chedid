@@ -6,8 +6,8 @@ import os
 
 sales_bp = Blueprint('sales_bp', __name__)
 
-INVENTORY_SERVICE_URL = os.getenv('INVENTORY_SERVICE_URL', 'http://inventory_service:5002')
-CUSTOMERS_SERVICE_URL = os.getenv('CUSTOMERS_SERVICE_URL', 'http://customers_service:5001')
+INVENTORY_SERVICE_URL = os.getenv('INVENTORY_SERVICE_URL', 'http://ecommerce_azar_chedid-inventory_service-1:5002/api/v1')
+CUSTOMERS_SERVICE_URL = os.getenv('CUSTOMERS_SERVICE_URL', 'http://ecommerce_azar_chedid-customers_service-1:5001/api/v1')
 
 @sales_bp.route('/')
 def home():

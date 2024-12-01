@@ -1,0 +1,96 @@
+2024-12-01 21:28:42,405 - INFO - Registered routes printed.
+2024-12-01 21:28:42,507 - INFO - Database tables initialized.
+2024-12-01 21:28:42,520 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-01 21:28:42,521 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 21:42:14,271 - INFO - Registered routes printed.
+2024-12-01 21:42:14,288 - INFO - Database tables initialized.
+2024-12-01 21:42:14,303 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-01 21:42:14,303 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 21:46:56,366 - INFO - Registered routes printed.
+2024-12-01 21:46:56,379 - INFO - Database tables initialized.
+2024-12-01 21:46:56,388 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-01 21:46:56,388 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 21:52:36,504 - INFO - Registered routes printed.
+2024-12-01 21:52:36,516 - INFO - Database tables initialized.
+2024-12-01 21:52:36,525 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-01 21:52:36,525 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 21:53:37,654 - INFO - Database tables initialized.
+2024-12-01 21:53:37,664 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-01 21:53:37,664 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 21:57:47,159 - INFO - Database tables initialized.
+2024-12-01 21:57:47,169 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-01 21:57:47,169 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 22:03:26,326 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:03:26,328 - INFO - 172.18.0.4 - - [01/Dec/2024 22:03:26] "[33mGET /customers/john_doe HTTP/1.1[0m" 404 -
+2024-12-01 22:03:42,381 - INFO - No customers found in the database.
+2024-12-01 22:03:42,382 - INFO - 172.18.0.1 - - [01/Dec/2024 22:03:42] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-12-01 22:03:49,499 - INFO - Customer registered successfully: azarlea
+2024-12-01 22:03:49,501 - INFO - 172.18.0.1 - - [01/Dec/2024 22:03:49] "[35m[1mPOST /api/v1/customers HTTP/1.1[0m" 201 -
+2024-12-01 22:04:16,252 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:04:16,255 - INFO - 172.18.0.4 - - [01/Dec/2024 22:04:16] "[33mGET /customers/azarlea HTTP/1.1[0m" 404 -
+2024-12-01 22:05:42,640 - INFO - Database tables initialized.
+2024-12-01 22:05:42,655 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-01 22:05:42,656 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 22:06:56,335 - INFO - Fetched all customers.
+2024-12-01 22:06:56,336 - INFO - 172.18.0.1 - - [01/Dec/2024 22:06:56] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-12-01 22:07:57,826 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:07:57,827 - INFO - 172.18.0.1 - - [01/Dec/2024 22:07:57] "[33mGET /api/v1/ HTTP/1.1[0m" 404 -
+2024-12-01 22:07:58,001 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:07:58,003 - INFO - 172.18.0.1 - - [01/Dec/2024 22:07:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-01 22:08:14,175 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:08:14,176 - INFO - 172.18.0.1 - - [01/Dec/2024 22:08:14] "[33mGET /api/v1/ HTTP/1.1[0m" 404 -
+2024-12-01 22:10:35,080 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:10:35,081 - INFO - 172.18.0.1 - - [01/Dec/2024 22:10:35] "[33mGET /api/v1/ HTTP/1.1[0m" 404 -
+2024-12-01 22:11:02,680 - INFO - Database tables initialized.
+2024-12-01 22:11:02,698 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-01 22:11:02,698 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-01 22:11:06,769 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:11:06,770 - INFO - 172.18.0.1 - - [01/Dec/2024 22:11:06] "[33mGET /api/v1/ HTTP/1.1[0m" 404 -
+2024-12-01 22:11:10,921 - INFO - Customer fetched by username: azarlea
+2024-12-01 22:11:10,923 - INFO - 172.18.0.4 - - [01/Dec/2024 22:11:10] "GET /api/v1/customers/azarlea HTTP/1.1" 200 -
+2024-12-01 22:11:52,266 - WARNING - 404 error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-12-01 22:11:52,267 - INFO - 172.18.0.1 - - [01/Dec/2024 22:11:52] "[33mGET /api/v1/ HTTP/1.1[0m" 404 -
+2024-12-01 22:13:30,704 - INFO - Received request to charge wallet for customer: azarlea
+2024-12-01 22:13:30,712 - INFO - Charging $50.0 to customer wallet: azarlea | Current balance: 0.0
+2024-12-01 22:13:30,767 - INFO - Successfully charged $50.0 to wallet of customer: azarlea | New balance: 50.0
+2024-12-01 22:13:30,795 - INFO - 172.18.0.1 - - [01/Dec/2024 22:13:30] "POST /api/v1/customers/azarlea/charge HTTP/1.1" 200 -
+2024-12-01 22:14:02,561 - INFO - Customer fetched by username: azarlea
+2024-12-01 22:14:02,564 - INFO - 172.18.0.4 - - [01/Dec/2024 22:14:02] "GET /api/v1/customers/azarlea HTTP/1.1" 200 -
+2024-12-01 22:14:57,431 - INFO - Customer fetched by username: azarlea
+2024-12-01 22:14:57,432 - INFO - 172.18.0.4 - - [01/Dec/2024 22:14:57] "GET /api/v1/customers/azarlea HTTP/1.1" 200 -
+2024-12-01 22:14:57,452 - INFO - Received request to deduct from wallet for customer: azarlea
+2024-12-01 22:14:57,459 - INFO - Deducting $10.0 from customer wallet: azarlea | Current balance: 100.0
+2024-12-01 22:14:57,511 - INFO - Successfully deducted $10.0 from wallet of customer: azarlea | New balance: 90.0
+2024-12-01 22:14:57,553 - INFO - 172.18.0.4 - - [01/Dec/2024 22:14:57] "POST /api/v1/customers/azarlea/deduct HTTP/1.1" 200 -
+2024-12-01 22:15:02,076 - INFO - Customer fetched by username: azarlea
+2024-12-01 22:15:02,078 - INFO - 172.18.0.4 - - [01/Dec/2024 22:15:02] "GET /api/v1/customers/azarlea HTTP/1.1" 200 -
+2024-12-01 22:15:02,102 - INFO - Received request to deduct from wallet for customer: azarlea
+2024-12-01 22:15:02,111 - INFO - Deducting $10.0 from customer wallet: azarlea | Current balance: 80.0
+2024-12-01 22:15:02,166 - INFO - Successfully deducted $10.0 from wallet of customer: azarlea | New balance: 70.0
+2024-12-01 22:15:02,205 - INFO - 172.18.0.4 - - [01/Dec/2024 22:15:02] "POST /api/v1/customers/azarlea/deduct HTTP/1.1" 200 -
+2024-12-01 22:16:00,413 - INFO - Customer fetched by username: azarlea
+2024-12-01 22:16:00,415 - INFO - 172.18.0.4 - - [01/Dec/2024 22:16:00] "GET /api/v1/customers/azarlea HTTP/1.1" 200 -
