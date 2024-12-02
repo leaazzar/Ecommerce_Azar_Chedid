@@ -12,6 +12,9 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'  # Log format
 )
 
+@inventory_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
 
 @inventory_bp.route('/', methods=['GET'])
 def default_route():

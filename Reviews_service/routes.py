@@ -1,7 +1,9 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, jsonify, request
 from models import db, Review
 import requests
 import os
+
+
 
 reviews_bp = Blueprint('reviews', __name__)
 
@@ -24,6 +26,9 @@ def item_exists(item_name):
         return any(item['name'].lower() == item_name.lower() for item in items)
     except requests.exceptions.RequestException:
         return False
+@reviews_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
 
 @reviews_bp.route('/')
 def home():

@@ -12,6 +12,10 @@ logging.basicConfig(
 customers_bp = Blueprint('customers_bp', __name__)
 
 
+@customers_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
+
 @customers_bp.route('/customers', methods=['POST'])
 def register_customer():
     try:

@@ -107,3 +107,40 @@
 2024-12-01 22:16:00,424 - INFO - Request received to fetch all goods.
 2024-12-01 22:16:00,433 - INFO - Fetched 4 goods from inventory.
 2024-12-01 22:16:00,435 - INFO - 172.18.0.4 - - [01/Dec/2024 22:16:00] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 08:36:40,095 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-02 08:36:40,095 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 08:40:34,441 - INFO - Request received to fetch all goods.
+2024-12-02 08:40:34,450 - INFO - Fetched 4 goods from inventory.
+2024-12-02 08:40:34,451 - INFO - 172.18.0.4 - - [02/Dec/2024 08:40:34] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 08:41:26,644 - INFO - Request received to delete item with ID: 1
+2024-12-02 08:41:26,706 - INFO - Item with ID 1 deleted successfully.
+2024-12-02 08:41:26,707 - INFO - 172.18.0.1 - - [02/Dec/2024 08:41:26] "DELETE /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 08:41:29,930 - INFO - Request received to delete item with ID: 2
+2024-12-02 08:41:29,974 - INFO - Item with ID 2 deleted successfully.
+2024-12-02 08:41:29,975 - INFO - 172.18.0.1 - - [02/Dec/2024 08:41:29] "DELETE /api/v1/inventory/2 HTTP/1.1" 200 -
+2024-12-02 08:41:32,329 - INFO - Request received to delete item with ID: 3
+2024-12-02 08:41:32,373 - INFO - Item with ID 3 deleted successfully.
+2024-12-02 08:41:32,374 - INFO - 172.18.0.1 - - [02/Dec/2024 08:41:32] "DELETE /api/v1/inventory/3 HTTP/1.1" 200 -
+2024-12-02 08:41:35,294 - INFO - Request received to delete item with ID: 4
+2024-12-02 08:41:35,341 - INFO - Item with ID 4 deleted successfully.
+2024-12-02 08:41:35,342 - INFO - 172.18.0.1 - - [02/Dec/2024 08:41:35] "DELETE /api/v1/inventory/4 HTTP/1.1" 200 -
+2024-12-02 08:41:38,592 - INFO - Request received to delete item with ID: 5
+2024-12-02 08:41:38,596 - WARNING - Item with ID 5 not found.
+2024-12-02 08:41:38,597 - INFO - 172.18.0.1 - - [02/Dec/2024 08:41:38] "[33mDELETE /api/v1/inventory/5 HTTP/1.1[0m" 404 -
+2024-12-02 08:42:24,988 - INFO - Request received to add a new good.
+2024-12-02 08:42:25,014 - INFO - Good added successfully: apple
+2024-12-02 08:42:25,015 - INFO - 172.18.0.1 - - [02/Dec/2024 08:42:25] "[35m[1mPOST /api/v1/inventory HTTP/1.1[0m" 201 -
+2024-12-02 08:43:34,113 - INFO - Request received to add a new good.
+2024-12-02 08:43:34,159 - INFO - Good added successfully: apple
+2024-12-02 08:43:34,160 - INFO - 172.18.0.1 - - [02/Dec/2024 08:43:34] "[35m[1mPOST /api/v1/inventory HTTP/1.1[0m" 201 -
+2024-12-02 08:45:38,514 - INFO - Request received to fetch all goods.
+2024-12-02 08:45:38,519 - INFO - Fetched 2 goods from inventory.
+2024-12-02 08:45:38,520 - INFO - 172.18.0.4 - - [02/Dec/2024 08:45:38] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 22:07:36,681 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 22:07:36,685 - INFO - [33mPress CTRL+C to quit[0m

@@ -94,3 +94,19 @@
 2024-12-01 22:15:02,205 - INFO - 172.18.0.4 - - [01/Dec/2024 22:15:02] "POST /api/v1/customers/azarlea/deduct HTTP/1.1" 200 -
 2024-12-01 22:16:00,413 - INFO - Customer fetched by username: azarlea
 2024-12-01 22:16:00,415 - INFO - 172.18.0.4 - - [01/Dec/2024 22:16:00] "GET /api/v1/customers/azarlea HTTP/1.1" 200 -
+2024-12-02 08:36:40,096 - INFO - Database tables initialized.
+2024-12-02 08:36:40,115 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-02 08:36:40,115 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 08:36:46,589 - WARNING - Username already taken: azarlea
+2024-12-02 08:36:46,590 - INFO - 172.18.0.1 - - [02/Dec/2024 08:36:46] "[31m[1mPOST /api/v1/customers HTTP/1.1[0m" 400 -
+2024-12-02 08:37:17,655 - INFO - Customer registered successfully: pia
+2024-12-02 08:37:17,656 - INFO - 172.18.0.1 - - [02/Dec/2024 08:37:17] "[35m[1mPOST /api/v1/customers HTTP/1.1[0m" 201 -
+2024-12-02 22:07:36,640 - INFO - Database tables initialized.
+2024-12-02 22:07:36,697 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-02 22:07:36,698 - INFO - [33mPress CTRL+C to quit[0m
