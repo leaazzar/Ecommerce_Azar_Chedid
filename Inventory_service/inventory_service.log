@@ -107,6 +107,7 @@
 2024-12-01 22:16:00,424 - INFO - Request received to fetch all goods.
 2024-12-01 22:16:00,433 - INFO - Fetched 4 goods from inventory.
 2024-12-01 22:16:00,435 - INFO - 172.18.0.4 - - [01/Dec/2024 22:16:00] "GET /api/v1/inventory HTTP/1.1" 200 -
+<<<<<<< HEAD
 2024-12-02 08:36:40,095 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5002
@@ -144,3 +145,193 @@
  * Running on http://127.0.0.1:5002
  * Running on http://172.18.0.2:5002
 2024-12-02 22:07:36,685 - INFO - [33mPress CTRL+C to quit[0m
+=======
+2024-12-02 17:44:47,156 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 17:44:47,157 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 17:50:15,021 - INFO - Request received to fetch all goods.
+2024-12-02 17:50:15,029 - INFO - Fetched 4 goods from inventory.
+2024-12-02 17:50:15,030 - INFO - 172.18.0.4 - - [02/Dec/2024 17:50:15] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:50:24,700 - INFO - Request received to fetch all goods.
+2024-12-02 17:50:24,703 - INFO - Fetched 4 goods from inventory.
+2024-12-02 17:50:24,703 - INFO - 172.18.0.1 - - [02/Dec/2024 17:50:24] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:50:36,963 - INFO - Request received to fetch all goods.
+2024-12-02 17:50:36,967 - INFO - Fetched 4 goods from inventory.
+2024-12-02 17:50:36,968 - INFO - 172.18.0.1 - - [02/Dec/2024 17:50:36] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:50:48,593 - INFO - Request received to delete item with ID: 1
+2024-12-02 17:50:48,619 - INFO - Item with ID 1 deleted successfully.
+2024-12-02 17:50:48,620 - INFO - 172.18.0.1 - - [02/Dec/2024 17:50:48] "DELETE /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 17:50:50,624 - INFO - Request received to delete item with ID: 2
+2024-12-02 17:50:50,644 - INFO - Item with ID 2 deleted successfully.
+2024-12-02 17:50:50,644 - INFO - 172.18.0.1 - - [02/Dec/2024 17:50:50] "DELETE /api/v1/inventory/2 HTTP/1.1" 200 -
+2024-12-02 17:50:52,658 - INFO - Request received to delete item with ID: 3
+2024-12-02 17:50:52,679 - INFO - Item with ID 3 deleted successfully.
+2024-12-02 17:50:52,679 - INFO - 172.18.0.1 - - [02/Dec/2024 17:50:52] "DELETE /api/v1/inventory/3 HTTP/1.1" 200 -
+2024-12-02 17:50:59,606 - INFO - Request received to fetch all goods.
+2024-12-02 17:50:59,608 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:50:59,608 - INFO - 172.18.0.1 - - [02/Dec/2024 17:50:59] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:51:07,807 - INFO - Request received to fetch all goods.
+2024-12-02 17:51:07,810 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:51:07,810 - INFO - 172.18.0.4 - - [02/Dec/2024 17:51:07] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:51:19,557 - INFO - Request received to delete item with ID: 4
+2024-12-02 17:51:19,579 - INFO - Item with ID 4 deleted successfully.
+2024-12-02 17:51:19,580 - INFO - 172.18.0.1 - - [02/Dec/2024 17:51:19] "DELETE /api/v1/inventory/4 HTTP/1.1" 200 -
+2024-12-02 17:51:25,394 - INFO - Request received to add a new good.
+2024-12-02 17:51:25,405 - INFO - Good added successfully: apple
+2024-12-02 17:51:25,406 - INFO - 172.18.0.1 - - [02/Dec/2024 17:51:25] "[35m[1mPOST /api/v1/inventory HTTP/1.1[0m" 201 -
+2024-12-02 17:51:32,525 - INFO - Request received to fetch all goods.
+2024-12-02 17:51:32,528 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:51:32,529 - INFO - 172.18.0.1 - - [02/Dec/2024 17:51:32] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:51:37,605 - INFO - Request received to fetch all goods.
+2024-12-02 17:51:37,607 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:51:37,607 - INFO - 172.18.0.4 - - [02/Dec/2024 17:51:37] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:51:55,584 - INFO - Request received to fetch all goods.
+2024-12-02 17:51:55,587 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:51:55,587 - INFO - 172.18.0.4 - - [02/Dec/2024 17:51:55] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:53:10,656 - INFO - Request received to fetch all goods.
+2024-12-02 17:53:10,659 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:53:10,659 - INFO - 172.18.0.4 - - [02/Dec/2024 17:53:10] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:53:31,719 - INFO - Request received to fetch all goods.
+2024-12-02 17:53:31,721 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:53:31,721 - INFO - 172.18.0.4 - - [02/Dec/2024 17:53:31] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:53:31,760 - INFO - Request received to update item with ID: 1
+2024-12-02 17:53:31,772 - INFO - Item with ID 1 updated successfully.
+2024-12-02 17:53:31,773 - INFO - 172.18.0.4 - - [02/Dec/2024 17:53:31] "PUT /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 17:55:00,438 - INFO - Request received to fetch all goods.
+2024-12-02 17:55:00,441 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:55:00,441 - INFO - 172.18.0.4 - - [02/Dec/2024 17:55:00] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:55:00,486 - INFO - Request received to update item with ID: 1
+2024-12-02 17:55:00,500 - INFO - Item with ID 1 updated successfully.
+2024-12-02 17:55:00,501 - INFO - 172.18.0.4 - - [02/Dec/2024 17:55:00] "PUT /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 17:57:03,712 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 17:57:03,712 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 17:58:40,594 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 17:58:40,595 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 17:59:30,522 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 17:59:30,523 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 17:59:35,540 - INFO - Request received to fetch all goods.
+2024-12-02 17:59:35,544 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:59:35,545 - INFO - 172.18.0.4 - - [02/Dec/2024 17:59:35] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:59:43,670 - INFO - Request received to fetch all goods.
+2024-12-02 17:59:43,672 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:59:43,672 - INFO - 172.18.0.4 - - [02/Dec/2024 17:59:43] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:59:46,048 - INFO - Request received to fetch all goods.
+2024-12-02 17:59:46,051 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:59:46,052 - INFO - 172.18.0.4 - - [02/Dec/2024 17:59:46] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:59:53,355 - INFO - Request received to fetch all goods.
+2024-12-02 17:59:53,357 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:59:53,358 - INFO - 172.18.0.4 - - [02/Dec/2024 17:59:53] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 17:59:57,669 - INFO - Request received to fetch all goods.
+2024-12-02 17:59:57,672 - INFO - Fetched 1 goods from inventory.
+2024-12-02 17:59:57,672 - INFO - 172.18.0.4 - - [02/Dec/2024 17:59:57] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:00:08,977 - INFO - Default route accessed.
+2024-12-02 18:00:08,977 - INFO - 172.18.0.1 - - [02/Dec/2024 18:00:08] "GET /api/v1/ HTTP/1.1" 200 -
+2024-12-02 18:00:13,247 - INFO - Request received to fetch all goods.
+2024-12-02 18:00:13,249 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:00:13,249 - INFO - 172.18.0.1 - - [02/Dec/2024 18:00:13] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:00:32,885 - INFO - Request received to update item with ID: 1
+2024-12-02 18:00:32,918 - INFO - Item with ID 1 updated successfully.
+2024-12-02 18:00:32,919 - INFO - 172.18.0.1 - - [02/Dec/2024 18:00:32] "PUT /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 18:00:36,426 - INFO - Request received to fetch all goods.
+2024-12-02 18:00:36,429 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:00:36,429 - INFO - 172.18.0.1 - - [02/Dec/2024 18:00:36] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:00:42,488 - INFO - Request received to fetch all goods.
+2024-12-02 18:00:42,490 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:00:42,491 - INFO - 172.18.0.4 - - [02/Dec/2024 18:00:42] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:00:49,004 - INFO - Request received to fetch all goods.
+2024-12-02 18:00:49,007 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:00:49,007 - INFO - 172.18.0.4 - - [02/Dec/2024 18:00:49] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:00:53,272 - INFO - Request received to fetch all goods.
+2024-12-02 18:00:53,275 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:00:53,275 - INFO - 172.18.0.4 - - [02/Dec/2024 18:00:53] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:00:53,311 - INFO - Request received to update item with ID: 1
+2024-12-02 18:00:53,323 - INFO - Item with ID 1 updated successfully.
+2024-12-02 18:00:53,324 - INFO - 172.18.0.4 - - [02/Dec/2024 18:00:53] "PUT /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 18:25:34,846 - INFO - Request received to fetch all goods.
+2024-12-02 18:25:34,853 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:25:34,854 - INFO - 172.18.0.4 - - [02/Dec/2024 18:25:34] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:31:53,799 - INFO - Request received to fetch all goods.
+2024-12-02 18:31:53,804 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:31:53,805 - INFO - 172.18.0.4 - - [02/Dec/2024 18:31:53] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:32:41,279 - INFO - Request received to fetch all goods.
+2024-12-02 18:32:41,283 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:32:41,284 - INFO - 172.18.0.4 - - [02/Dec/2024 18:32:41] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:35:24,833 - INFO - Request received to fetch all goods.
+2024-12-02 18:35:24,835 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:35:24,835 - INFO - 172.18.0.4 - - [02/Dec/2024 18:35:24] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:35:42,591 - INFO - Request received to fetch all goods.
+2024-12-02 18:35:42,594 - INFO - Fetched 1 goods from inventory.
+2024-12-02 18:35:42,595 - INFO - 172.18.0.4 - - [02/Dec/2024 18:35:42] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:36:34,611 - INFO - Request received to add a new good.
+2024-12-02 18:36:34,642 - INFO - Good added successfully: television
+2024-12-02 18:36:34,643 - INFO - 172.18.0.1 - - [02/Dec/2024 18:36:34] "[35m[1mPOST /api/v1/inventory HTTP/1.1[0m" 201 -
+2024-12-02 18:36:49,412 - INFO - Request received to fetch all goods.
+2024-12-02 18:36:49,414 - INFO - Fetched 2 goods from inventory.
+2024-12-02 18:36:49,414 - INFO - 172.18.0.4 - - [02/Dec/2024 18:36:49] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:50:17,814 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-02 18:50:17,815 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 18:52:34,624 - INFO - Request received to fetch all goods.
+2024-12-02 18:52:34,635 - INFO - Fetched 2 goods from inventory.
+2024-12-02 18:52:34,636 - INFO - 172.18.0.5 - - [02/Dec/2024 18:52:34] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 18:58:35,087 - INFO - Request received to fetch all goods.
+2024-12-02 18:58:35,093 - INFO - Fetched 2 goods from inventory.
+2024-12-02 18:58:35,095 - INFO - 172.18.0.5 - - [02/Dec/2024 18:58:35] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 19:31:06,949 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 19:31:06,949 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 19:31:27,961 - INFO - Request received to add a new good.
+2024-12-02 19:31:27,986 - INFO - Good added successfully: television
+2024-12-02 19:31:27,987 - INFO - 172.18.0.1 - - [02/Dec/2024 19:31:27] "[35m[1mPOST /api/v1/inventory HTTP/1.1[0m" 201 -
+2024-12-02 19:33:48,117 - INFO - Request received to fetch all goods.
+2024-12-02 19:33:48,122 - INFO - Fetched 3 goods from inventory.
+2024-12-02 19:33:48,123 - INFO - 172.18.0.1 - - [02/Dec/2024 19:33:48] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 19:34:31,420 - INFO - Request received to update item with ID: 1
+2024-12-02 19:34:31,445 - INFO - Item with ID 1 updated successfully.
+2024-12-02 19:34:31,446 - INFO - 172.18.0.1 - - [02/Dec/2024 19:34:31] "PUT /api/v1/inventory/1 HTTP/1.1" 200 -
+2024-12-02 19:35:14,102 - INFO - Request received to delete item with ID: 3
+2024-12-02 19:35:14,123 - INFO - Item with ID 3 deleted successfully.
+2024-12-02 19:35:14,123 - INFO - 172.18.0.1 - - [02/Dec/2024 19:35:14] "DELETE /api/v1/inventory/3 HTTP/1.1" 200 -
+2024-12-02 20:21:01,787 - INFO - Request received to fetch all goods.
+2024-12-02 20:21:01,798 - INFO - Fetched 2 goods from inventory.
+2024-12-02 20:21:01,801 - INFO - 172.18.0.4 - - [02/Dec/2024 20:21:01] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 20:21:40,466 - INFO - Request received to fetch all goods.
+2024-12-02 20:21:40,468 - INFO - Fetched 2 goods from inventory.
+2024-12-02 20:21:40,469 - INFO - 172.18.0.4 - - [02/Dec/2024 20:21:40] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 20:24:10,748 - INFO - Request received to fetch all goods.
+2024-12-02 20:24:10,750 - INFO - Fetched 2 goods from inventory.
+2024-12-02 20:24:10,750 - INFO - 172.18.0.4 - - [02/Dec/2024 20:24:10] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 20:25:16,167 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 20:25:16,168 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 20:34:47,143 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-02 20:34:47,144 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 20:37:51,224 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.2:5002
+2024-12-02 20:37:51,225 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 20:38:01,517 - INFO - Request received to fetch all goods.
+2024-12-02 20:38:01,534 - INFO - Fetched 2 goods from inventory.
+2024-12-02 20:38:01,536 - INFO - 172.18.0.5 - - [02/Dec/2024 20:38:01] "GET /api/v1/inventory HTTP/1.1" 200 -
+>>>>>>> bbfcfa5bc3969dcf565922857d6f5d9e26eba847

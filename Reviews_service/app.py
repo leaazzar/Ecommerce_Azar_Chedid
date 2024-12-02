@@ -3,6 +3,8 @@
 from flask import Flask
 from models import db
 from routes import reviews_bp
+import os
+import logging
 
 def create_app():
     app = Flask(__name__)
@@ -25,4 +27,9 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
+    log_file_path = os.path.join(os.getcwd(), 'reviews_service.log')
+    logging.basicConfig(
+    filename=log_file_path,
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s')
     app.run(host='0.0.0.0', port=5000)
