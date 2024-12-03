@@ -156,7 +156,7 @@ def delete_review(review_id):
         # Log unexpected errors
         logging.error(f"Error occurred while deleting review with ID: {review_id} | Error: {str(e)}")
         return {'error': f'An unexpected error occurred: {str(e)}'}, 500
-    return {'message': 'Review deleted successfully.'}, 200
+   
 
 @reviews_bp.route('/product/<string:item_name>', methods=['GET'])
 def get_product_reviews(item_name):

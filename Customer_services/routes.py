@@ -242,13 +242,7 @@ def charge_wallet(username):
 
     except Exception as e:
         db.session.rollback()
-
-
-        # Log the error
         logging.error(f"Error while charging wallet for customer: {username} | Error: {e}")
-
-        # Return a generic error response
-
         return {"error": "An unexpected error occurred. Please try again later."}, 500
 
 @customers_bp.route('/customers/<username>/deduct', methods=['POST'])
@@ -305,13 +299,5 @@ def deduct_wallet(username):
 
     except Exception as e:
         db.session.rollback()
-
-
-        # Log the error
         logging.error(f"Error while deducting wallet for customer: {username} | Error: {e}")
-
-        # Return a generic error response
         return {"error": "An unexpected error occurred. Please try again later."}, 500
-
-        return {"error": "An unexpected error occurred. Please try again later."}, 500
-

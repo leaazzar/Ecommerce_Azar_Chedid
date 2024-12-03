@@ -6,8 +6,11 @@ from routes import reviews_bp
 import os
 import logging
 
-def create_app():
+
+def create_app(config_class=None):
     app = Flask(__name__)
+    if config_class:
+        app.config.from_object(config_class)
 
     # Configuration
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///reviews.db'  

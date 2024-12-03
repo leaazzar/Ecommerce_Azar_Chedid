@@ -9,3 +9,10 @@
 2024-12-02 20:38:19,378 - INFO - Received request to delete review with ID: 1
 2024-12-02 20:38:19,421 - INFO - Review with ID: 1 successfully deleted by user: pia123
 2024-12-02 20:38:19,422 - INFO - 172.18.0.1 - - [02/Dec/2024 20:38:19] "DELETE /reviews/1?customer_username=pia123 HTTP/1.1" 200 -
+2024-12-03 11:47:44,178 - INFO - Accessed home route.
+2024-12-03 11:47:44,341 - INFO - Updating review ID 1 with data: {'customer_username': 'unauthorized_user'}
+2024-12-03 11:47:44,341 - ERROR - Error updating review: ID 1 | The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2024-12-03 11:47:44,363 - INFO - Received request to delete review with ID: 1
+2024-12-03 11:47:44,364 - ERROR - Error occurred while deleting review with ID: 1 | Error: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2024-12-03 11:47:44,376 - INFO - Received request to fetch reviews for product: item1
+2024-12-03 11:47:44,376 - ERROR - Error occurred while fetching reviews for product: item1 | Error: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
