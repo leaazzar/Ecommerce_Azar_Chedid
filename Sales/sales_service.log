@@ -33,3 +33,436 @@
  * Running on http://127.0.0.1:5003
  * Running on http://172.18.0.4:5003
 2024-12-03 00:17:38,249 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:15:17,829 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 11:15:17,830 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:22:09,527 - INFO - 172.18.0.1 - - [03/Dec/2024 11:22:09] "[33mGET /goods HTTP/1.1[0m" 404 -
+2024-12-03 11:23:02,716 - INFO - 172.18.0.1 - - [03/Dec/2024 11:23:02] "[33mGET /goods HTTP/1.1[0m" 404 -
+2024-12-03 11:23:52,857 - INFO - 172.18.0.1 - - [03/Dec/2024 11:23:52] "[33mGET /goods HTTP/1.1[0m" 404 -
+2024-12-03 11:23:53,111 - INFO - 172.18.0.1 - - [03/Dec/2024 11:23:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-03 11:24:26,566 - INFO - 172.18.0.1 - - [03/Dec/2024 11:24:26] "[33mGET /goods HTTP/1.1[0m" 404 -
+2024-12-03 11:24:30,814 - INFO - 172.18.0.1 - - [03/Dec/2024 11:24:30] "[33mGET /goods/phone HTTP/1.1[0m" 404 -
+2024-12-03 11:24:39,929 - INFO - 172.18.0.1 - - [03/Dec/2024 11:24:39] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 11:24:50,703 - INFO - 172.18.0.1 - - [03/Dec/2024 11:24:50] "[33mGET / HTTP/1.1[0m" 404 -
+2024-12-03 11:26:36,915 - INFO - 172.18.0.1 - - [03/Dec/2024 11:26:36] "[32mGET /sales HTTP/1.1[0m" 308 -
+2024-12-03 11:26:36,919 - INFO - Accessed the home route.
+2024-12-03 11:26:36,920 - INFO - 172.18.0.1 - - [03/Dec/2024 11:26:36] "GET /sales/ HTTP/1.1" 200 -
+2024-12-03 11:26:44,914 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:26:44,938 - INFO - Successfully fetched 3 goods.
+2024-12-03 11:26:44,938 - INFO - 172.18.0.1 - - [03/Dec/2024 11:26:44] "GET /sales/goods HTTP/1.1" 200 -
+2024-12-03 11:26:51,761 - INFO - 172.18.0.1 - - [03/Dec/2024 11:26:51] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 11:27:08,539 - INFO - 172.18.0.1 - - [03/Dec/2024 11:27:08] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 11:27:50,419 - INFO - 172.18.0.1 - - [03/Dec/2024 11:27:50] "[33mGET /customers/pia123/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:27:54,929 - INFO - 172.18.0.1 - - [03/Dec/2024 11:27:54] "[33mGET /customers/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:27:59,017 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:27:59,026 - INFO - Successfully fetched 3 goods.
+2024-12-03 11:27:59,027 - INFO - 172.18.0.1 - - [03/Dec/2024 11:27:59] "GET /sales/goods HTTP/1.1" 200 -
+2024-12-03 11:28:03,073 - INFO - 172.18.0.1 - - [03/Dec/2024 11:28:03] "[33mGET /goods/phone HTTP/1.1[0m" 404 -
+2024-12-03 11:28:06,549 - INFO - 172.18.0.1 - - [03/Dec/2024 11:28:06] "[33mGET /goods/apple HTTP/1.1[0m" 404 -
+2024-12-03 11:28:19,744 - INFO - 172.18.0.1 - - [03/Dec/2024 11:28:19] "GET /sales/goods/apple HTTP/1.1" 200 -
+2024-12-03 11:28:27,986 - INFO - Received request to fetch purchase history for customer: pia
+2024-12-03 11:28:27,998 - ERROR - Unexpected error while fetching purchase history for customer: pia | Error: (sqlite3.OperationalError) no such table: purchases
+[SQL: SELECT purchases.purchase_id AS purchases_purchase_id, purchases.customer_username AS purchases_customer_username, purchases.item_name AS purchases_item_name, purchases.quantity AS purchases_quantity, purchases.total_price AS purchases_total_price, purchases.purchase_date AS purchases_purchase_date 
+FROM purchases 
+WHERE purchases.customer_username = ?]
+[parameters: ('pia',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 11:28:27,998 - INFO - 172.18.0.1 - - [03/Dec/2024 11:28:27] "[35m[1mGET /sales/customers/pia/purchases HTTP/1.1[0m" 500 -
+2024-12-03 11:28:45,210 - INFO - 172.18.0.1 - - [03/Dec/2024 11:28:45] "[31m[1mGET /sales/sales HTTP/1.1[0m" 405 -
+2024-12-03 11:28:57,330 - INFO - 172.18.0.1 - - [03/Dec/2024 11:28:57] "[33mGET /sales/sales/customers/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:29:08,399 - INFO - 172.18.0.1 - - [03/Dec/2024 11:29:08] "[33mGET /sales/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:29:24,816 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'phone', 'quantity': 1}
+2024-12-03 11:29:24,817 - INFO - Processing sale for customer: pia, item: phone, quantity: 1
+2024-12-03 11:29:24,825 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 0.0}
+2024-12-03 11:29:24,830 - WARNING - Item not found: phone
+2024-12-03 11:29:24,830 - INFO - 172.18.0.1 - - [03/Dec/2024 11:29:24] "[33mPOST /sales/sales HTTP/1.1[0m" 404 -
+2024-12-03 11:29:29,297 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:29:29,297 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:29:29,303 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 0.0}
+2024-12-03 11:29:29,309 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:29:29,309 - WARNING - Insufficient funds for customer: pia (Wallet: 0.0, Total Price: 1.0)
+2024-12-03 11:29:29,309 - INFO - 172.18.0.1 - - [03/Dec/2024 11:29:29] "[31m[1mPOST /sales/sales HTTP/1.1[0m" 400 -
+2024-12-03 11:30:39,304 - INFO - 172.18.0.1 - - [03/Dec/2024 11:30:39] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 11:30:43,745 - INFO - 172.18.0.1 - - [03/Dec/2024 11:30:43] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 11:30:50,325 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:30:50,325 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:30:50,331 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 0.0}
+2024-12-03 11:30:50,337 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:30:50,337 - WARNING - Insufficient funds for customer: pia (Wallet: 0.0, Total Price: 1.0)
+2024-12-03 11:30:50,337 - INFO - 172.18.0.1 - - [03/Dec/2024 11:30:50] "[31m[1mPOST /sales/sales HTTP/1.1[0m" 400 -
+2024-12-03 11:31:12,816 - INFO - 172.18.0.1 - - [03/Dec/2024 11:31:12] "[33mGET / HTTP/1.1[0m" 404 -
+2024-12-03 11:31:20,499 - INFO - 172.18.0.1 - - [03/Dec/2024 11:31:20] "[33mGET / HTTP/1.1[0m" 404 -
+2024-12-03 11:31:32,520 - INFO - 172.18.0.1 - - [03/Dec/2024 11:31:32] "GET /sales/goods/apple HTTP/1.1" 200 -
+2024-12-03 11:31:38,685 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:31:38,691 - INFO - Successfully fetched 3 goods.
+2024-12-03 11:31:38,692 - INFO - 172.18.0.1 - - [03/Dec/2024 11:31:38] "GET /sales/goods HTTP/1.1" 200 -
+2024-12-03 11:31:43,977 - INFO - 172.18.0.1 - - [03/Dec/2024 11:31:43] "[33mGET /sales/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:32:20,901 - INFO - Received request to fetch purchase history for customer: pia
+2024-12-03 11:32:20,903 - ERROR - Unexpected error while fetching purchase history for customer: pia | Error: (sqlite3.OperationalError) no such table: purchases
+[SQL: SELECT purchases.purchase_id AS purchases_purchase_id, purchases.customer_username AS purchases_customer_username, purchases.item_name AS purchases_item_name, purchases.quantity AS purchases_quantity, purchases.total_price AS purchases_total_price, purchases.purchase_date AS purchases_purchase_date 
+FROM purchases 
+WHERE purchases.customer_username = ?]
+[parameters: ('pia',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 11:32:20,904 - INFO - 172.18.0.1 - - [03/Dec/2024 11:32:20] "[35m[1mGET /sales/customers/pia/purchases HTTP/1.1[0m" 500 -
+2024-12-03 11:32:38,857 - INFO - 172.18.0.1 - - [03/Dec/2024 11:32:38] "[32mGET /sales//customers/pia/purchases HTTP/1.1[0m" 308 -
+2024-12-03 11:32:38,861 - INFO - Received request to fetch purchase history for customer: pia
+2024-12-03 11:32:38,863 - ERROR - Unexpected error while fetching purchase history for customer: pia | Error: (sqlite3.OperationalError) no such table: purchases
+[SQL: SELECT purchases.purchase_id AS purchases_purchase_id, purchases.customer_username AS purchases_customer_username, purchases.item_name AS purchases_item_name, purchases.quantity AS purchases_quantity, purchases.total_price AS purchases_total_price, purchases.purchase_date AS purchases_purchase_date 
+FROM purchases 
+WHERE purchases.customer_username = ?]
+[parameters: ('pia',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 11:32:38,863 - INFO - 172.18.0.1 - - [03/Dec/2024 11:32:38] "[35m[1mGET /sales/customers/pia/purchases HTTP/1.1[0m" 500 -
+2024-12-03 11:33:27,574 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:27] "[32mGET /sales HTTP/1.1[0m" 308 -
+2024-12-03 11:33:27,580 - INFO - Accessed the home route.
+2024-12-03 11:33:27,581 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:27] "GET /sales/ HTTP/1.1" 200 -
+2024-12-03 11:33:31,409 - INFO - Received request to fetch purchase history for customer: pia
+2024-12-03 11:33:31,411 - ERROR - Unexpected error while fetching purchase history for customer: pia | Error: (sqlite3.OperationalError) no such table: purchases
+[SQL: SELECT purchases.purchase_id AS purchases_purchase_id, purchases.customer_username AS purchases_customer_username, purchases.item_name AS purchases_item_name, purchases.quantity AS purchases_quantity, purchases.total_price AS purchases_total_price, purchases.purchase_date AS purchases_purchase_date 
+FROM purchases 
+WHERE purchases.customer_username = ?]
+[parameters: ('pia',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 11:33:31,411 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:31] "[35m[1mGET /sales/customers/pia/purchases HTTP/1.1[0m" 500 -
+2024-12-03 11:33:36,756 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:36] "[33mGET /customers/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:33:45,114 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:33:45,120 - INFO - Successfully fetched 3 goods.
+2024-12-03 11:33:45,121 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:45] "GET /sales/goods HTTP/1.1" 200 -
+2024-12-03 11:33:49,663 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:49] "GET /sales/goods/apple HTTP/1.1" 200 -
+2024-12-03 11:33:53,681 - INFO - 172.18.0.1 - - [03/Dec/2024 11:33:53] "[33mGET /goods/apple HTTP/1.1[0m" 404 -
+2024-12-03 11:34:00,539 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:00] "GET /sales/goods/apple HTTP/1.1" 200 -
+2024-12-03 11:34:06,484 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:34:06,485 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:34:06,492 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 0.0}
+2024-12-03 11:34:06,498 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:34:06,498 - WARNING - Insufficient funds for customer: pia (Wallet: 0.0, Total Price: 1.0)
+2024-12-03 11:34:06,499 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:06] "[31m[1mPOST /sales/sales HTTP/1.1[0m" 400 -
+2024-12-03 11:34:12,134 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:12] "[33mGET /customers/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:34:35,211 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:35] "[33mGET /customers/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:34:40,421 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:40] "[32mGET /sales HTTP/1.1[0m" 308 -
+2024-12-03 11:34:40,425 - INFO - Accessed the home route.
+2024-12-03 11:34:40,426 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:40] "GET /sales/ HTTP/1.1" 200 -
+2024-12-03 11:34:58,209 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:34:58,209 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:34:58,216 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:34:58,222 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:34:58,222 - INFO - Total price calculated: 1.0
+2024-12-03 11:34:58,260 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:34:58,265 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:34:58,291 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:34:58,292 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:58] "[35m[1mPOST /sales/sales HTTP/1.1[0m" 500 -
+2024-12-03 11:35:16,369 - INFO - 172.18.0.1 - - [03/Dec/2024 11:35:16] "[33mGET /customers/pia/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:35:21,313 - INFO - 172.18.0.1 - - [03/Dec/2024 11:35:21] "[33mGET /customers/pia123/purchases HTTP/1.1[0m" 404 -
+2024-12-03 11:37:41,341 - INFO - Accessed the home route.
+2024-12-03 11:37:41,342 - INFO - 172.18.0.1 - - [03/Dec/2024 11:37:41] "GET /sales/ HTTP/1.1" 200 -
+2024-12-03 11:38:08,330 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:38:08,330 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:38:08,341 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:38:08,348 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:38:08,349 - INFO - Total price calculated: 1.0
+2024-12-03 11:38:08,399 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:38:08,405 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:38:08,449 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:38:08,451 - INFO - 172.18.0.1 - - [03/Dec/2024 11:38:08] "[35m[1mPOST /sales/sales HTTP/1.1[0m" 500 -
+2024-12-03 11:40:15,362 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:40:15,363 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:40:15,370 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:40:15,376 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:40:15,377 - INFO - Total price calculated: 1.0
+2024-12-03 11:40:15,413 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:40:15,417 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:40:15,442 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:40:15,442 - INFO - 172.18.0.1 - - [03/Dec/2024 11:40:15] "[35m[1mPOST /sales/sales HTTP/1.1[0m" 500 -
+2024-12-03 11:40:27,674 - INFO - 172.18.0.1 - - [03/Dec/2024 11:40:27] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 11:41:31,101 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 11:41:31,102 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:41:34,403 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:41:34,404 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:41:34,416 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:41:34,427 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:41:34,427 - INFO - Total price calculated: 1.0
+2024-12-03 11:41:34,472 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:41:34,476 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:41:34,498 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:41:34,499 - INFO - 172.18.0.1 - - [03/Dec/2024 11:41:34] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:41:39,025 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:41:39,026 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:41:39,032 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:41:39,038 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:41:39,038 - INFO - Total price calculated: 1.0
+2024-12-03 11:41:39,073 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:41:39,078 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:41:39,105 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:41:39,106 - INFO - 172.18.0.1 - - [03/Dec/2024 11:41:39] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:41:43,345 - INFO - 172.18.0.1 - - [03/Dec/2024 11:41:43] "[33mGET /sales/goods HTTP/1.1[0m" 404 -
+2024-12-03 11:41:47,658 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:41:47,665 - INFO - Successfully fetched 3 goods.
+2024-12-03 11:41:47,665 - INFO - 172.18.0.1 - - [03/Dec/2024 11:41:47] "GET /goods HTTP/1.1" 200 -
+2024-12-03 11:42:20,100 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:42:20,119 - INFO - Successfully fetched 2 goods.
+2024-12-03 11:42:20,119 - INFO - 172.18.0.1 - - [03/Dec/2024 11:42:20] "GET /goods HTTP/1.1" 200 -
+2024-12-03 11:42:24,963 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:42:24,963 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:42:24,971 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:42:24,978 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:42:24,978 - INFO - Total price calculated: 1.0
+2024-12-03 11:42:25,016 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:42:25,020 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:42:25,053 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:42:25,054 - INFO - 172.18.0.1 - - [03/Dec/2024 11:42:25] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:42:30,785 - INFO - Fetching goods from the Inventory service.
+2024-12-03 11:42:30,792 - INFO - Successfully fetched 2 goods.
+2024-12-03 11:42:30,792 - INFO - 172.18.0.1 - - [03/Dec/2024 11:42:30] "GET /goods HTTP/1.1" 200 -
+2024-12-03 11:42:41,972 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:42:41,972 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:42:41,979 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:42:41,984 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:42:41,984 - INFO - Total price calculated: 1.0
+2024-12-03 11:42:42,020 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:42:42,024 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:42:42,050 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:42:42,051 - INFO - 172.18.0.1 - - [03/Dec/2024 11:42:42] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:43:03,106 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 11:43:03,106 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 11:43:03,112 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:43:03,117 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 11:43:03,117 - INFO - Total price calculated: 1.0
+2024-12-03 11:43:03,155 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 11:43:03,160 - ERROR - Failed to update inventory for item: apple
+2024-12-03 11:43:03,193 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:43:03,194 - INFO - 172.18.0.1 - - [03/Dec/2024 11:43:03] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:43:07,857 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 11:43:07,858 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 11:43:07,864 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:43:07,869 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 20, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 11:43:07,869 - INFO - Total price calculated: 2.0
+2024-12-03 11:43:07,904 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 11:43:07,908 - ERROR - Failed to update inventory for item: banana
+2024-12-03 11:43:07,933 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:43:07,934 - INFO - 172.18.0.1 - - [03/Dec/2024 11:43:07] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:45:27,393 - INFO - 172.18.0.1 - - [03/Dec/2024 11:45:27] "[33mGET /sales/goods/apple HTTP/1.1[0m" 404 -
+2024-12-03 11:45:31,694 - INFO - 172.18.0.1 - - [03/Dec/2024 11:45:31] "[33mGET /sales/goods/banana HTTP/1.1[0m" 404 -
+2024-12-03 11:45:40,566 - INFO - 172.18.0.1 - - [03/Dec/2024 11:45:40] "GET /goods/banana HTTP/1.1" 200 -
+2024-12-03 11:46:05,874 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 11:46:05,874 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 11:46:05,882 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 11:46:05,888 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 20, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 11:46:05,888 - INFO - Total price calculated: 2.0
+2024-12-03 11:46:05,929 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 11:46:05,933 - ERROR - Failed to update inventory for item: banana
+2024-12-03 11:46:05,985 - INFO - Wallet deduction rolled back for customer: pia
+2024-12-03 11:46:05,986 - INFO - 172.18.0.1 - - [03/Dec/2024 11:46:05] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 11:48:43,350 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 11:48:43,351 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:00:48,487 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 12:00:48,487 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:02:11,651 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 12:02:11,651 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:04:05,688 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:04:05,688 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:04:05,718 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 20000.0}
+2024-12-03 12:04:05,727 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 2, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:04:05,727 - INFO - Total price calculated: 2.0
+2024-12-03 12:04:05,757 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:04:05,772 - INFO - Inventory updated for item: banana (New Count: 1)
+2024-12-03 12:04:05,784 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'banana', 1, 2.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:04:05,785 - INFO - 172.18.0.1 - - [03/Dec/2024 12:04:05] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:04:29,476 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:04:29,477 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:04:29,488 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19996.0}
+2024-12-03 12:04:29,495 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 1, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:04:29,495 - INFO - Total price calculated: 2.0
+2024-12-03 12:04:29,548 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:04:29,571 - INFO - Inventory updated for item: banana (New Count: 0)
+2024-12-03 12:04:29,576 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'banana', 1, 2.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:04:29,577 - INFO - 172.18.0.1 - - [03/Dec/2024 12:04:29] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:04:36,845 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:04:36,851 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:04:36,852 - INFO - 172.18.0.1 - - [03/Dec/2024 12:04:36] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:04:44,876 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 12:04:44,876 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 12:04:44,883 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19992.0}
+2024-12-03 12:04:44,891 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 2, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 12:04:44,891 - INFO - Total price calculated: 1.0
+2024-12-03 12:04:44,919 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 12:04:44,937 - INFO - Inventory updated for item: apple (New Count: 1)
+2024-12-03 12:04:44,940 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'apple', 1, 1.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:04:44,940 - INFO - 172.18.0.1 - - [03/Dec/2024 12:04:44] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:04:54,322 - INFO - Received sale request: {'customer_username': 'pia123', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 12:04:54,322 - INFO - Processing sale for customer: pia123, item: apple, quantity: 1
+2024-12-03 12:04:54,328 - WARNING - Customer not found: pia123
+2024-12-03 12:04:54,328 - INFO - 172.18.0.1 - - [03/Dec/2024 12:04:54] "[33mPOST /sales HTTP/1.1[0m" 404 -
+2024-12-03 12:05:06,271 - ERROR - Error while fetching purchase history for customer: pia123 | (sqlite3.OperationalError) no such table: purchases
+[SQL: SELECT purchases.purchase_id AS purchases_purchase_id, purchases.customer_username AS purchases_customer_username, purchases.item_name AS purchases_item_name, purchases.quantity AS purchases_quantity, purchases.total_price AS purchases_total_price, purchases.purchase_date AS purchases_purchase_date 
+FROM purchases 
+WHERE purchases.customer_username = ?]
+[parameters: ('pia123',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:05:06,272 - INFO - 172.18.0.1 - - [03/Dec/2024 12:05:06] "[35m[1mGET /customers/pia123/purchases HTTP/1.1[0m" 500 -
+2024-12-03 12:05:10,678 - INFO - 172.18.0.1 - - [03/Dec/2024 12:05:10] "[31m[1mGET /sales HTTP/1.1[0m" 405 -
+2024-12-03 12:05:39,746 - INFO - 172.18.0.1 - - [03/Dec/2024 12:05:39] "[33mGET /sales/goods/banana HTTP/1.1[0m" 404 -
+2024-12-03 12:05:46,270 - INFO - 172.18.0.1 - - [03/Dec/2024 12:05:46] "GET /goods/banana HTTP/1.1" 200 -
+2024-12-03 12:05:51,351 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:05:51,357 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:05:51,358 - INFO - 172.18.0.1 - - [03/Dec/2024 12:05:51] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:06:19,708 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:06:19,714 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:06:19,714 - INFO - 172.18.0.1 - - [03/Dec/2024 12:06:19] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:07:34,462 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:07:34,469 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:07:34,469 - INFO - 172.18.0.1 - - [03/Dec/2024 12:07:34] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:07:39,819 - INFO - 172.18.0.1 - - [03/Dec/2024 12:07:39] "[33mGET /sales/goods HTTP/1.1[0m" 404 -
+2024-12-03 12:07:46,359 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:07:46,366 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:07:46,367 - INFO - 172.18.0.1 - - [03/Dec/2024 12:07:46] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:07:50,098 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:07:50,115 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:07:50,116 - INFO - 172.18.0.1 - - [03/Dec/2024 12:07:50] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:08:04,139 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 12:08:04,140 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 12:08:04,146 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19990.0}
+2024-12-03 12:08:04,152 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 1, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 12:08:04,152 - INFO - Total price calculated: 1.0
+2024-12-03 12:08:04,184 - INFO - Deducted 1.0 from customer wallet: pia
+2024-12-03 12:08:04,199 - INFO - Inventory updated for item: apple (New Count: 0)
+2024-12-03 12:08:04,202 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'apple', 1, 1.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:08:04,203 - INFO - 172.18.0.1 - - [03/Dec/2024 12:08:04] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:08:08,576 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:08:08,577 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:08:08,582 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19988.0}
+2024-12-03 12:08:08,589 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 0, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:08:08,589 - WARNING - Insufficient stock for item: banana (Requested: 1, In Stock: 0)
+2024-12-03 12:08:08,590 - INFO - 172.18.0.1 - - [03/Dec/2024 12:08:08] "[31m[1mPOST /sales HTTP/1.1[0m" 400 -
+2024-12-03 12:08:55,679 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:08:55,685 - INFO - Successfully fetched 2 goods.
+2024-12-03 12:08:55,685 - INFO - 172.18.0.1 - - [03/Dec/2024 12:08:55] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:09:01,883 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:09:01,884 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:09:01,890 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19988.0}
+2024-12-03 12:09:01,897 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 20, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:09:01,897 - INFO - Total price calculated: 2.0
+2024-12-03 12:09:01,933 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:09:01,949 - INFO - Inventory updated for item: banana (New Count: 19)
+2024-12-03 12:09:01,952 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'banana', 1, 2.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:09:01,952 - INFO - 172.18.0.1 - - [03/Dec/2024 12:09:01] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:10:35,855 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:10:35,856 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:10:35,873 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19984.0}
+2024-12-03 12:10:35,878 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 19, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:10:35,879 - INFO - Total price calculated: 2.0
+2024-12-03 12:10:35,902 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:10:35,918 - INFO - Inventory updated for item: banana (New Count: 18)
+2024-12-03 12:10:35,920 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'banana', 1, 2.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:10:35,921 - INFO - 172.18.0.1 - - [03/Dec/2024 12:10:35] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:11:16,621 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:11:16,622 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:11:16,643 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19980.0}
+2024-12-03 12:11:16,655 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 18, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:11:16,655 - INFO - Total price calculated: 2.0
+2024-12-03 12:11:16,688 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:11:16,707 - INFO - Inventory updated for item: banana (New Count: 17)
+2024-12-03 12:11:16,710 - ERROR - Unexpected error: (sqlite3.OperationalError) no such table: purchases
+[SQL: INSERT INTO purchases (customer_username, item_name, quantity, total_price, purchase_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP) RETURNING purchase_id, purchase_date]
+[parameters: ('pia', 'banana', 1, 2.0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-12-03 12:11:16,711 - INFO - 172.18.0.1 - - [03/Dec/2024 12:11:16] "[35m[1mPOST /sales HTTP/1.1[0m" 500 -
+2024-12-03 12:11:59,195 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 12:11:59,195 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:12:01,313 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:12:01,313 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:12:01,340 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19976.0}
+2024-12-03 12:12:01,351 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 17, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:12:01,351 - INFO - Total price calculated: 2.0
+2024-12-03 12:12:01,385 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:12:01,407 - INFO - Inventory updated for item: banana (New Count: 16)
+2024-12-03 12:12:01,421 - INFO - Purchase recorded: <Purchase 1>
+2024-12-03 12:12:01,426 - INFO - 172.18.0.1 - - [03/Dec/2024 12:12:01] "[35m[1mPOST /sales HTTP/1.1[0m" 201 -
+2024-12-03 12:12:43,892 - INFO - 172.18.0.1 - - [03/Dec/2024 12:12:43] "GET /customers/pia/purchases HTTP/1.1" 200 -
+2024-12-03 12:12:50,648 - INFO - No purchase history found for customer: leo
+2024-12-03 12:12:50,649 - INFO - 172.18.0.1 - - [03/Dec/2024 12:12:50] "GET /customers/leo/purchases HTTP/1.1" 200 -
+2024-12-03 12:12:59,408 - INFO - 172.18.0.1 - - [03/Dec/2024 12:12:59] "[31m[1mGET /sales HTTP/1.1[0m" 405 -
+2024-12-03 12:13:01,018 - INFO - 172.18.0.1 - - [03/Dec/2024 12:13:01] "[31m[1mGET /sales HTTP/1.1[0m" 405 -
+2024-12-03 12:13:13,178 - INFO - 172.18.0.1 - - [03/Dec/2024 12:13:13] "GET /goods/banana HTTP/1.1" 200 -
+2024-12-03 12:13:18,462 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'banana', 'quantity': 1}
+2024-12-03 12:13:18,463 - INFO - Processing sale for customer: pia, item: banana, quantity: 1
+2024-12-03 12:13:18,469 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19972.0}
+2024-12-03 12:13:18,476 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 16, 'description': None, 'id': 4, 'name': 'banana', 'price_per_item': 2.0}
+2024-12-03 12:13:18,477 - INFO - Total price calculated: 2.0
+2024-12-03 12:13:18,514 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:13:18,533 - INFO - Inventory updated for item: banana (New Count: 15)
+2024-12-03 12:13:18,544 - INFO - Purchase recorded: <Purchase 2>
+2024-12-03 12:13:18,548 - INFO - 172.18.0.1 - - [03/Dec/2024 12:13:18] "[35m[1mPOST /sales HTTP/1.1[0m" 201 -
+2024-12-03 12:13:23,392 - INFO - 172.18.0.1 - - [03/Dec/2024 12:13:23] "GET /goods/banana HTTP/1.1" 200 -
+2024-12-03 12:15:16,149 - INFO - 172.18.0.1 - - [03/Dec/2024 12:15:16] "[31m[1mGET /sales HTTP/1.1[0m" 405 -
+2024-12-03 12:16:04,123 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5003
+ * Running on http://172.18.0.4:5003
+2024-12-03 12:16:04,124 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:16:05,746 - INFO - 172.18.0.1 - - [03/Dec/2024 12:16:05] "GET /sales HTTP/1.1" 200 -
+2024-12-03 12:16:26,287 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 12:16:26,288 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 12:16:26,304 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19968.0}
+2024-12-03 12:16:26,317 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 0, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 12:16:26,317 - WARNING - Insufficient stock for item: apple (Requested: 1, In Stock: 0)
+2024-12-03 12:16:26,318 - INFO - 172.18.0.1 - - [03/Dec/2024 12:16:26] "[31m[1mPOST /sales HTTP/1.1[0m" 400 -
+2024-12-03 12:16:30,414 - INFO - 172.18.0.1 - - [03/Dec/2024 12:16:30] "GET /goods/banana HTTP/1.1" 200 -
+2024-12-03 12:16:46,811 - INFO - Fetching goods from the Inventory service.
+2024-12-03 12:16:46,819 - INFO - Successfully fetched 3 goods.
+2024-12-03 12:16:46,820 - INFO - 172.18.0.1 - - [03/Dec/2024 12:16:46] "GET /goods HTTP/1.1" 200 -
+2024-12-03 12:16:52,449 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 12:16:52,449 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 12:16:52,467 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19968.0}
+2024-12-03 12:16:52,475 - INFO - Item details retrieved: {'category': 'food', 'count_in_stock': 0, 'description': 'Red apple', 'id': 1, 'name': 'apple', 'price_per_item': 1.0}
+2024-12-03 12:16:52,475 - WARNING - Insufficient stock for item: apple (Requested: 1, In Stock: 0)
+2024-12-03 12:16:52,476 - INFO - 172.18.0.1 - - [03/Dec/2024 12:16:52] "[31m[1mPOST /sales HTTP/1.1[0m" 400 -
+2024-12-03 12:17:14,521 - INFO - 172.18.0.1 - - [03/Dec/2024 12:17:14] "GET /goods/apple HTTP/1.1" 200 -
+2024-12-03 12:17:53,176 - INFO - Received sale request: {'customer_username': 'pia', 'item_name': 'apple', 'quantity': 1}
+2024-12-03 12:17:53,176 - INFO - Processing sale for customer: pia, item: apple, quantity: 1
+2024-12-03 12:17:53,183 - INFO - Customer details retrieved: {'full_name': 'Piachedid', 'id': 2, 'username': 'pia', 'wallet': 19968.0}
+2024-12-03 12:17:53,189 - INFO - Item details retrieved: {'category': 'fruit', 'count_in_stock': 20, 'description': None, 'id': 5, 'name': 'apple', 'price_per_item': 2.0}
+2024-12-03 12:17:53,190 - INFO - Total price calculated: 2.0
+2024-12-03 12:17:53,241 - INFO - Deducted 2.0 from customer wallet: pia
+2024-12-03 12:17:53,266 - INFO - Inventory updated for item: apple (New Count: 19)
+2024-12-03 12:17:53,283 - INFO - Purchase recorded: <Purchase 3>
+2024-12-03 12:17:53,288 - INFO - 172.18.0.1 - - [03/Dec/2024 12:17:53] "[35m[1mPOST /sales HTTP/1.1[0m" 201 -
+2024-12-03 12:17:58,713 - INFO - No purchase history found for customer: leo
+2024-12-03 12:17:58,714 - INFO - 172.18.0.1 - - [03/Dec/2024 12:17:58] "GET /customers/leo/purchases HTTP/1.1" 200 -
+2024-12-03 12:18:01,603 - INFO - 172.18.0.1 - - [03/Dec/2024 12:18:01] "GET /customers/pia/purchases HTTP/1.1" 200 -
+2024-12-03 12:18:10,720 - INFO - 172.18.0.1 - - [03/Dec/2024 12:18:10] "GET /sales HTTP/1.1" 200 -

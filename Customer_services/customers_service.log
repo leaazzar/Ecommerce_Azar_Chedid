@@ -307,3 +307,239 @@
  * Running on http://127.0.0.1:5001
  * Running on http://172.18.0.2:5001
 2024-12-03 00:17:37,450 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:15:17,095 - INFO - Database tables initialized.
+2024-12-03 11:15:17,109 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-03 11:15:17,110 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:15:21,310 - WARNING - Customer not found: pia123
+2024-12-03 11:15:21,311 - INFO - 172.18.0.5 - - [03/Dec/2024 11:15:21] "[33mGET /api/v1/customers/pia123 HTTP/1.1[0m" 404 -
+2024-12-03 11:16:45,217 - WARNING - Customer not found: pia123
+2024-12-03 11:16:45,218 - INFO - 172.18.0.5 - - [03/Dec/2024 11:16:45] "[33mGET /api/v1/customers/pia123 HTTP/1.1[0m" 404 -
+2024-12-03 11:19:49,324 - WARNING - Customer not found: pia123
+2024-12-03 11:19:49,325 - INFO - 172.18.0.5 - - [03/Dec/2024 11:19:49] "[33mGET /api/v1/customers/pia123 HTTP/1.1[0m" 404 -
+2024-12-03 11:20:11,291 - WARNING - Customer not found: pia123
+2024-12-03 11:20:11,292 - INFO - 172.18.0.5 - - [03/Dec/2024 11:20:11] "[33mGET /api/v1/customers/pia123 HTTP/1.1[0m" 404 -
+2024-12-03 11:21:09,217 - INFO - Fetched all customers.
+2024-12-03 11:21:09,218 - INFO - 172.18.0.1 - - [03/Dec/2024 11:21:09] "GET /api/v1/customers HTTP/1.1" 200 -
+2024-12-03 11:21:19,133 - INFO - Customer fetched by username: pia
+2024-12-03 11:21:19,133 - INFO - 172.18.0.5 - - [03/Dec/2024 11:21:19] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:21:25,711 - INFO - Customer fetched by username: pia
+2024-12-03 11:21:25,712 - INFO - 172.18.0.5 - - [03/Dec/2024 11:21:25] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:29:24,823 - INFO - Customer fetched by username: pia
+2024-12-03 11:29:24,824 - INFO - 172.18.0.4 - - [03/Dec/2024 11:29:24] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:29:29,302 - INFO - Customer fetched by username: pia
+2024-12-03 11:29:29,302 - INFO - 172.18.0.4 - - [03/Dec/2024 11:29:29] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:30:50,330 - INFO - Customer fetched by username: pia
+2024-12-03 11:30:50,330 - INFO - 172.18.0.4 - - [03/Dec/2024 11:30:50] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:34:06,490 - INFO - Customer fetched by username: pia
+2024-12-03 11:34:06,491 - INFO - 172.18.0.4 - - [03/Dec/2024 11:34:06] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:34:50,454 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:34:50,457 - INFO - Charging $10000.0 to customer wallet: pia | Current balance: 0.0
+2024-12-03 11:34:50,488 - INFO - Successfully charged $10000.0 to wallet of customer: pia | New balance: 10000.0
+2024-12-03 11:34:50,498 - INFO - 172.18.0.1 - - [03/Dec/2024 11:34:50] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:34:58,214 - INFO - Customer fetched by username: pia
+2024-12-03 11:34:58,215 - INFO - 172.18.0.4 - - [03/Dec/2024 11:34:58] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:34:58,224 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:34:58,226 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:34:58,248 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:34:58,259 - INFO - 172.18.0.4 - - [03/Dec/2024 11:34:58] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:34:58,268 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:34:58,270 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:34:58,280 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:34:58,290 - INFO - 172.18.0.4 - - [03/Dec/2024 11:34:58] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:38:08,339 - INFO - Customer fetched by username: pia
+2024-12-03 11:38:08,340 - INFO - 172.18.0.4 - - [03/Dec/2024 11:38:08] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:38:08,351 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:38:08,355 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:38:08,379 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:38:08,397 - INFO - 172.18.0.4 - - [03/Dec/2024 11:38:08] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:38:08,409 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:38:08,413 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:38:08,433 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:38:08,448 - INFO - 172.18.0.4 - - [03/Dec/2024 11:38:08] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:40:15,368 - INFO - Customer fetched by username: pia
+2024-12-03 11:40:15,369 - INFO - 172.18.0.4 - - [03/Dec/2024 11:40:15] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:40:15,379 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:40:15,381 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:40:15,402 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:40:15,412 - INFO - 172.18.0.4 - - [03/Dec/2024 11:40:15] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:40:15,420 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:40:15,423 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:40:15,432 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:40:15,441 - INFO - 172.18.0.4 - - [03/Dec/2024 11:40:15] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:41:30,711 - INFO - Database tables initialized.
+2024-12-03 11:41:30,719 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-03 11:41:30,720 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:41:34,414 - INFO - Customer fetched by username: pia
+2024-12-03 11:41:34,415 - INFO - 172.18.0.4 - - [03/Dec/2024 11:41:34] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:41:34,430 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:41:34,433 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:41:34,459 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:41:34,470 - INFO - 172.18.0.4 - - [03/Dec/2024 11:41:34] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:41:34,478 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:41:34,481 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:41:34,490 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:41:34,497 - INFO - 172.18.0.4 - - [03/Dec/2024 11:41:34] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:41:39,030 - INFO - Customer fetched by username: pia
+2024-12-03 11:41:39,031 - INFO - 172.18.0.4 - - [03/Dec/2024 11:41:39] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:41:39,040 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:41:39,043 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:41:39,063 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:41:39,072 - INFO - 172.18.0.4 - - [03/Dec/2024 11:41:39] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:41:39,080 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:41:39,083 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:41:39,095 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:41:39,104 - INFO - 172.18.0.4 - - [03/Dec/2024 11:41:39] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:42:24,969 - INFO - Customer fetched by username: pia
+2024-12-03 11:42:24,970 - INFO - 172.18.0.4 - - [03/Dec/2024 11:42:24] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:42:24,981 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:42:24,984 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:42:24,997 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:42:25,014 - INFO - 172.18.0.4 - - [03/Dec/2024 11:42:25] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:42:25,023 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:42:25,026 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:42:25,039 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:42:25,052 - INFO - 172.18.0.4 - - [03/Dec/2024 11:42:25] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:42:41,977 - INFO - Customer fetched by username: pia
+2024-12-03 11:42:41,978 - INFO - 172.18.0.4 - - [03/Dec/2024 11:42:41] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:42:41,986 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:42:41,988 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:42:42,008 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:42:42,018 - INFO - 172.18.0.4 - - [03/Dec/2024 11:42:42] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:42:42,028 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:42:42,031 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:42:42,040 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:42:42,049 - INFO - 172.18.0.4 - - [03/Dec/2024 11:42:42] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:43:03,111 - INFO - Customer fetched by username: pia
+2024-12-03 11:43:03,111 - INFO - 172.18.0.4 - - [03/Dec/2024 11:43:03] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:43:03,119 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:43:03,121 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:43:03,142 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:43:03,153 - INFO - 172.18.0.4 - - [03/Dec/2024 11:43:03] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:43:03,163 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:43:03,166 - INFO - Charging $1.0 to customer wallet: pia | Current balance: 19998.0
+2024-12-03 11:43:03,180 - INFO - Successfully charged $1.0 to wallet of customer: pia | New balance: 19999.0
+2024-12-03 11:43:03,192 - INFO - 172.18.0.4 - - [03/Dec/2024 11:43:03] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:43:07,862 - INFO - Customer fetched by username: pia
+2024-12-03 11:43:07,863 - INFO - 172.18.0.4 - - [03/Dec/2024 11:43:07] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:43:07,871 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:43:07,873 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:43:07,894 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19998.0
+2024-12-03 11:43:07,902 - INFO - 172.18.0.4 - - [03/Dec/2024 11:43:07] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:43:07,911 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:43:07,913 - INFO - Charging $2.0 to customer wallet: pia | Current balance: 19996.0
+2024-12-03 11:43:07,924 - INFO - Successfully charged $2.0 to wallet of customer: pia | New balance: 19998.0
+2024-12-03 11:43:07,932 - INFO - 172.18.0.4 - - [03/Dec/2024 11:43:07] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:46:05,880 - INFO - Customer fetched by username: pia
+2024-12-03 11:46:05,881 - INFO - 172.18.0.4 - - [03/Dec/2024 11:46:05] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 11:46:05,890 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 11:46:05,893 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 11:46:05,918 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19998.0
+2024-12-03 11:46:05,926 - INFO - 172.18.0.4 - - [03/Dec/2024 11:46:05] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 11:46:05,936 - INFO - Received request to charge wallet for customer: pia
+2024-12-03 11:46:05,939 - INFO - Charging $2.0 to customer wallet: pia | Current balance: 19996.0
+2024-12-03 11:46:05,967 - INFO - Successfully charged $2.0 to wallet of customer: pia | New balance: 19998.0
+2024-12-03 11:46:05,984 - INFO - 172.18.0.4 - - [03/Dec/2024 11:46:05] "POST /api/v1/customers/pia/charge HTTP/1.1" 200 -
+2024-12-03 11:48:42,951 - INFO - Database tables initialized.
+2024-12-03 11:48:42,960 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-03 11:48:42,960 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:00:48,119 - INFO - Database tables initialized.
+2024-12-03 12:00:48,126 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-03 12:00:48,126 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:02:11,266 - INFO - Database tables initialized.
+2024-12-03 12:02:11,274 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-03 12:02:11,274 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:04:05,716 - INFO - Customer fetched by username: pia
+2024-12-03 12:04:05,717 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:05] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:04:05,729 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:04:05,732 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 20000.0
+2024-12-03 12:04:05,747 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19998.0
+2024-12-03 12:04:05,755 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:05] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:04:29,485 - INFO - Customer fetched by username: pia
+2024-12-03 12:04:29,486 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:29] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:04:29,498 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:04:29,501 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19996.0
+2024-12-03 12:04:29,533 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19994.0
+2024-12-03 12:04:29,547 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:29] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:04:44,881 - INFO - Customer fetched by username: pia
+2024-12-03 12:04:44,882 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:44] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:04:44,894 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:04:44,896 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 19992.0
+2024-12-03 12:04:44,907 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19991.0
+2024-12-03 12:04:44,917 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:44] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:04:54,326 - WARNING - Customer not found: pia123
+2024-12-03 12:04:54,327 - INFO - 172.18.0.4 - - [03/Dec/2024 12:04:54] "[33mGET /api/v1/customers/pia123 HTTP/1.1[0m" 404 -
+2024-12-03 12:08:04,144 - INFO - Customer fetched by username: pia
+2024-12-03 12:08:04,145 - INFO - 172.18.0.4 - - [03/Dec/2024 12:08:04] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:08:04,155 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:08:04,157 - INFO - Deducting $1.0 from customer wallet: pia | Current balance: 19990.0
+2024-12-03 12:08:04,175 - INFO - Successfully deducted $1.0 from wallet of customer: pia | New balance: 19989.0
+2024-12-03 12:08:04,183 - INFO - 172.18.0.4 - - [03/Dec/2024 12:08:04] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:08:08,581 - INFO - Customer fetched by username: pia
+2024-12-03 12:08:08,582 - INFO - 172.18.0.4 - - [03/Dec/2024 12:08:08] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:09:01,888 - INFO - Customer fetched by username: pia
+2024-12-03 12:09:01,889 - INFO - 172.18.0.4 - - [03/Dec/2024 12:09:01] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:09:01,899 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:09:01,901 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19988.0
+2024-12-03 12:09:01,921 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19986.0
+2024-12-03 12:09:01,932 - INFO - 172.18.0.4 - - [03/Dec/2024 12:09:01] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:10:35,871 - INFO - Customer fetched by username: pia
+2024-12-03 12:10:35,872 - INFO - 172.18.0.4 - - [03/Dec/2024 12:10:35] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:10:35,882 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:10:35,883 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19984.0
+2024-12-03 12:10:35,892 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19982.0
+2024-12-03 12:10:35,900 - INFO - 172.18.0.4 - - [03/Dec/2024 12:10:35] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:11:16,640 - INFO - Customer fetched by username: pia
+2024-12-03 12:11:16,641 - INFO - 172.18.0.4 - - [03/Dec/2024 12:11:16] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:11:16,658 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:11:16,663 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19980.0
+2024-12-03 12:11:16,678 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19978.0
+2024-12-03 12:11:16,687 - INFO - 172.18.0.4 - - [03/Dec/2024 12:11:16] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:11:58,793 - INFO - Database tables initialized.
+2024-12-03 12:11:58,799 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-03 12:11:58,799 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:12:01,337 - INFO - Customer fetched by username: pia
+2024-12-03 12:12:01,338 - INFO - 172.18.0.4 - - [03/Dec/2024 12:12:01] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:12:01,353 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:12:01,356 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19976.0
+2024-12-03 12:12:01,372 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19974.0
+2024-12-03 12:12:01,383 - INFO - 172.18.0.4 - - [03/Dec/2024 12:12:01] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:13:18,468 - INFO - Customer fetched by username: pia
+2024-12-03 12:13:18,468 - INFO - 172.18.0.4 - - [03/Dec/2024 12:13:18] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:13:18,479 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:13:18,481 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19972.0
+2024-12-03 12:13:18,501 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19970.0
+2024-12-03 12:13:18,513 - INFO - 172.18.0.4 - - [03/Dec/2024 12:13:18] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -
+2024-12-03 12:16:03,642 - INFO - Database tables initialized.
+2024-12-03 12:16:03,651 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.3:5001
+2024-12-03 12:16:03,652 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:16:26,302 - INFO - Customer fetched by username: pia
+2024-12-03 12:16:26,303 - INFO - 172.18.0.4 - - [03/Dec/2024 12:16:26] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:16:52,465 - INFO - Customer fetched by username: pia
+2024-12-03 12:16:52,466 - INFO - 172.18.0.4 - - [03/Dec/2024 12:16:52] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:17:53,182 - INFO - Customer fetched by username: pia
+2024-12-03 12:17:53,182 - INFO - 172.18.0.4 - - [03/Dec/2024 12:17:53] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-03 12:17:53,192 - INFO - Received request to deduct from wallet for customer: pia
+2024-12-03 12:17:53,194 - INFO - Deducting $2.0 from customer wallet: pia | Current balance: 19968.0
+2024-12-03 12:17:53,223 - INFO - Successfully deducted $2.0 from wallet of customer: pia | New balance: 19966.0
+2024-12-03 12:17:53,239 - INFO - 172.18.0.4 - - [03/Dec/2024 12:17:53] "POST /api/v1/customers/pia/deduct HTTP/1.1" 200 -

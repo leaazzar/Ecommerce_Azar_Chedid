@@ -5,7 +5,7 @@ from db import db
 from sqlalchemy.sql import text
 
 
-inventory_bp = Blueprint('inventory', __name__)
+inventory_bp = Blueprint('inventory_bp', __name__)
 
 logging.basicConfig(
     filename='inventory_service.log',  # Log file
@@ -101,7 +101,8 @@ def delete_goods(item_id):
         db.session.rollback()
         logging.error(f"Error while deleting item with ID {item_id}: {str(e)}")
         return {"error": f"An unexpected error occurred: {str(e)}"}, 500
-
+    
+@inventory_bp.route('inventory/<int:item_id>', methods=['PUT'])
 def update_goods(item_id):
     try:
         logging.info(f"Request received to update item with ID: {item_id}")
@@ -142,7 +143,7 @@ def update_goods(item_id):
         db.session.rollback()
         logging.error(f"Error while updating item with ID {item_id}: {str(e)}")
         return {"error": f"An unexpected error occurred: {str(e)}"}, 500
-    
+
 @inventory_bp.route('/inventory', methods=['GET'])
 def get_all_goods():
     try:

@@ -225,33 +225,29 @@ def create_sale():
 @sales_bp.route('/customers/<username>/purchases', methods=['GET'])
 def get_purchase_history(username):
     try:
-        # Log the incoming request
-        logging.info(f"Received request to fetch purchase history for customer: {username}")
-
-        # Validate username input
-        if not username or username.strip() == "":
-            logging.warning("Customer username is empty or invalid.")
-            return {"error": "Customer username is required and cannot be empty."}, 400
-
-        # Query database for purchases
         purchases = Purchase.query.filter_by(customer_username=username).all()
 
-        # Log the result of the query
+        # Log the results of the query
+        logging.debug(f"Found {len(purchases)} purchases for customer: {username}")
+
         if not purchases:
             logging.info(f"No purchase history found for customer: {username}")
             return {"message": f"No purchase history found for customer '{username}'."}, 200
 
-        logging.info(f"Found {len(purchases)} purchases for customer: {username}")
-
-        # Prepare the list of purchases to return
         purchases_list = [purchase.to_dict() for purchase in purchases]
-        logging.info(f"Successfully prepared purchase history for customer: {username}")
         return jsonify(purchases_list), 200
-
-    except ValueError as ve:
-        logging.warning(f"Invalid username format for customer: {username} | Error: {str(ve)}")
-        return {"error": "Invalid username format."}, 400
     except Exception as e:
-        # Handle unexpected errors and log the exception
-        logging.error(f"Unexpected error while fetching purchase history for customer: {username} | Error: {str(e)}")
+        logging.error(f"Error while fetching purchase history for customer: {username} | {str(e)}")
         return {"error": f"An unexpected error occurred: {str(e)}"}, 500
+    
+@sales_bp.route('/sales', methods=['GET'])
+def get_sales():
+        try:
+            sales = Purchase.query.all()  # Fetch all sales from the database
+            if not sales:
+                return jsonify({"message": "No sales found."}), 404
+            
+            sales_list = [sale.to_dict() for sale in sales]  # Convert sales to dictionary
+            return jsonify(sales_list), 200
+        except Exception as e:
+            return jsonify({"error": f"An error occurred: {str(e)}"}), 500

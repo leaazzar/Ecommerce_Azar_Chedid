@@ -72,3 +72,79 @@
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.5:5000
 2024-12-03 00:17:38,703 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:15:17,995 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 11:15:17,996 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:15:21,285 - INFO - Received review submission: {'customer_username': 'pia123', 'item_name': 'phone', 'rating': 4, 'comment': 'Great product!'}
+2024-12-03 11:15:21,312 - WARNING - Customer does not exist: pia123
+2024-12-03 11:15:21,312 - INFO - 172.18.0.1 - - [03/Dec/2024 11:15:21] "[33mPOST /reviews/ HTTP/1.1[0m" 404 -
+2024-12-03 11:16:45,212 - INFO - Received review submission: {'customer_username': 'pia123', 'item_name': 'phone', 'rating': 4, 'comment': 'Great product!'}
+2024-12-03 11:16:45,219 - WARNING - Customer does not exist: pia123
+2024-12-03 11:16:45,219 - INFO - 172.18.0.1 - - [03/Dec/2024 11:16:45] "[33mPOST /reviews/ HTTP/1.1[0m" 404 -
+2024-12-03 11:16:50,552 - INFO - Accessed home route.
+2024-12-03 11:16:50,552 - INFO - 172.18.0.1 - - [03/Dec/2024 11:16:50] "GET /reviews/ HTTP/1.1" 200 -
+2024-12-03 11:17:01,483 - INFO - Received request to delete review with ID: 1
+2024-12-03 11:17:01,491 - WARNING - Review not found for ID: 1
+2024-12-03 11:17:01,492 - INFO - 172.18.0.1 - - [03/Dec/2024 11:17:01] "[33mDELETE /reviews/1?customer_username=pia123 HTTP/1.1[0m" 404 -
+2024-12-03 11:17:06,680 - INFO - Received request to fetch reviews for customer: pia123
+2024-12-03 11:17:06,686 - INFO - Found 1 reviews for customer: pia123
+2024-12-03 11:17:06,687 - INFO - 172.18.0.1 - - [03/Dec/2024 11:17:06] "GET /reviews/customer/pia123 HTTP/1.1" 200 -
+2024-12-03 11:19:49,280 - INFO - Received review submission: {'customer_username': 'pia123', 'item_name': 'phone', 'rating': 4, 'comment': 'Great product!'}
+2024-12-03 11:19:49,329 - WARNING - Customer does not exist: pia123
+2024-12-03 11:19:49,329 - INFO - 172.18.0.1 - - [03/Dec/2024 11:19:49] "[33mPOST /reviews/ HTTP/1.1[0m" 404 -
+2024-12-03 11:20:03,676 - INFO - Received request to fetch reviews for product: phone
+2024-12-03 11:20:03,680 - INFO - No approved reviews found for product: phone
+2024-12-03 11:20:03,680 - INFO - 172.18.0.1 - - [03/Dec/2024 11:20:03] "GET /reviews/product/phone HTTP/1.1" 200 -
+2024-12-03 11:20:11,285 - INFO - Received review submission: {'customer_username': 'pia123', 'item_name': 'phone', 'rating': 4, 'comment': 'Great product!'}
+2024-12-03 11:20:11,293 - WARNING - Customer does not exist: pia123
+2024-12-03 11:20:11,293 - INFO - 172.18.0.1 - - [03/Dec/2024 11:20:11] "[33mPOST /reviews/ HTTP/1.1[0m" 404 -
+2024-12-03 11:21:19,117 - INFO - Received review submission: {'customer_username': 'pia', 'item_name': 'phone', 'rating': 4, 'comment': 'Great product!'}
+2024-12-03 11:21:19,147 - WARNING - Item does not exist: phone
+2024-12-03 11:21:19,148 - INFO - 172.18.0.1 - - [03/Dec/2024 11:21:19] "[33mPOST /reviews/ HTTP/1.1[0m" 404 -
+2024-12-03 11:21:25,706 - INFO - Received review submission: {'customer_username': 'pia', 'item_name': 'apple', 'rating': 4, 'comment': 'Great product!'}
+2024-12-03 11:21:25,741 - INFO - Review submitted successfully: <Review 4>
+2024-12-03 11:21:25,745 - INFO - 172.18.0.1 - - [03/Dec/2024 11:21:25] "[35m[1mPOST /reviews/ HTTP/1.1[0m" 201 -
+2024-12-03 11:21:32,417 - INFO - Received request to moderate review with ID: 1
+2024-12-03 11:21:32,420 - WARNING - Review not found for moderation: ID 1
+2024-12-03 11:21:32,420 - INFO - 172.18.0.1 - - [03/Dec/2024 11:21:32] "[33mPUT /reviews/1/moderate HTTP/1.1[0m" 404 -
+2024-12-03 11:21:38,072 - INFO - Received request to moderate review with ID: 4
+2024-12-03 11:21:38,096 - INFO - Review with ID: 4 successfully moderated to status: approved
+2024-12-03 11:21:38,098 - INFO - 172.18.0.1 - - [03/Dec/2024 11:21:38] "PUT /reviews/4/moderate HTTP/1.1" 200 -
+2024-12-03 11:21:46,347 - INFO - Received request to fetch reviews for customer: pia
+2024-12-03 11:21:46,350 - INFO - Found 2 reviews for customer: pia
+2024-12-03 11:21:46,350 - INFO - 172.18.0.1 - - [03/Dec/2024 11:21:46] "GET /reviews/customer/pia HTTP/1.1" 200 -
+2024-12-03 11:26:29,145 - INFO - 172.18.0.1 - - [03/Dec/2024 11:26:29] "[33mGET /sales/goods HTTP/1.1[0m" 404 -
+2024-12-03 11:26:29,217 - INFO - 172.18.0.1 - - [03/Dec/2024 11:26:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-03 11:27:14,808 - INFO - 172.18.0.1 - - [03/Dec/2024 11:27:14] "[33mGET /sales/goods HTTP/1.1[0m" 404 -
+2024-12-03 11:41:31,151 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 11:41:31,152 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 11:48:43,434 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 11:48:43,435 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:00:48,524 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 12:00:48,524 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:02:11,720 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 12:02:11,721 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:11:59,193 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 12:11:59,194 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 12:16:04,156 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.5:5000
+2024-12-03 12:16:04,156 - INFO - [33mPress CTRL+C to quit[0m
