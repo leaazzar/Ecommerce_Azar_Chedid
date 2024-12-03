@@ -11,9 +11,13 @@ Welcome to Ecommerce Documentation!
    :caption: Contents:
 
    Customer_services
+   Customer_services_models
    Inventory_service
+   Inventory_service_models
    Reviews_service
+   Reviews_service_models
    Sales
+   Sales_models
 
 Indices and tables
 ==================
@@ -21,4 +25,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

@@ -13,6 +13,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sales Service" href="Sales.html" />
+    <link rel="prev" title="Inventory_service Models" href="Inventory_service_models.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -30,156 +32,8 @@
 
           <div class="body" role="main">
             
-  <section id="module-Reviews_service.models">
-<span id="reviews-service"></span><h1>Reviews Service<a class="headerlink" href="#module-Reviews_service.models" title="Link to this heading">¶</a></h1>
-<p>Database Models for the Reviews Service.</p>
-<p>This module contains SQLAlchemy models representing the database schema for the service.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="Reviews_service.models.Review">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Reviews_service.models.</span></span><span class="sig-name descname"><span class="pre">Review</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Reviews_service/models.html#Review"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Reviews_service.models.Review" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
-<p>Represents a review for a product.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#Reviews_service.models.Review.id" title="Link to this definition">¶</a></dt>
-<dd><p>Unique identifier for the review (primary key).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.customer_username">
-<span class="sig-name descname"><span class="pre">customer_username</span></span><a class="headerlink" href="#Reviews_service.models.Review.customer_username" title="Link to this definition">¶</a></dt>
-<dd><p>Username of the customer who submitted the review.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.item_name">
-<span class="sig-name descname"><span class="pre">item_name</span></span><a class="headerlink" href="#Reviews_service.models.Review.item_name" title="Link to this definition">¶</a></dt>
-<dd><p>Name of the item being reviewed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.rating">
-<span class="sig-name descname"><span class="pre">rating</span></span><a class="headerlink" href="#Reviews_service.models.Review.rating" title="Link to this definition">¶</a></dt>
-<dd><p>Rating given to the item (1-5).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.comment">
-<span class="sig-name descname"><span class="pre">comment</span></span><a class="headerlink" href="#Reviews_service.models.Review.comment" title="Link to this definition">¶</a></dt>
-<dd><p>Comment provided by the customer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.status">
-<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#Reviews_service.models.Review.status" title="Link to this definition">¶</a></dt>
-<dd><p>Moderation status of the review (e.g., “pending”, “approved”, “rejected”).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Reviews_service.models.Review.__init__" title="Link to this definition">¶</a></dt>
-<dd><p>A simple constructor that allows initialization from kwargs.</p>
-<p>Sets attributes on the constructed instance using the names and
-values in <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p>
-<p>Only keys that are present as
-attributes of the instance’s class are allowed. These could be,
-for example, any mapped columns or relationships.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review._sa_class_manager">
-<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'comment':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'created_at':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'customer_username':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'item_name':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'rating':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'status':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'updated_at':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#Reviews_service.models.Review._sa_class_manager" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">comment</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.created_at">
-<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#Reviews_service.models.Review.created_at" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">customer_username</span></span><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">item_name</span></span><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.query">
-<span class="sig-name descname"><span class="pre">query</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">t.ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">Query</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#Reviews_service.models.Review.query" title="Link to this definition">¶</a></dt>
-<dd><p>A SQLAlchemy query for a model. Equivalent to <code class="docutils literal notranslate"><span class="pre">db.session.query(Model)</span></code>. Can be
-customized per-model by overriding <code class="xref py py-attr docutils literal notranslate"><span class="pre">query_class</span></code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The query interface is considered legacy in SQLAlchemy. Prefer using
-<code class="docutils literal notranslate"><span class="pre">session.execute(select())</span></code> instead.</p>
-</div>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">rating</span></span><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id5">
-<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Reviews_service/models.html#Review.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Reviews_service.models.Review.to_dict" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="Reviews_service.models.Review.updated_at">
-<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#Reviews_service.models.Review.updated_at" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <section id="reviews-service">
+<h1>Reviews Service<a class="headerlink" href="#reviews-service" title="Link to this heading">¶</a></h1>
 </section>
 
 
@@ -199,11 +53,22 @@ customized per-model by overriding <code class="xref py py-attr docutils literal
 
 
 <h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Customer_services.html">Customer Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Customer_services_models.html">Customer_services Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inventory_service.html">Inventory Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inventory_service_models.html">Inventory_service Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reviews Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sales.html">Sales Service</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Inventory_service_models.html" title="previous chapter">Inventory_service Models</a></li>
+      <li>Next: <a href="Sales.html" title="next chapter">Sales Service</a></li>
   </ul></li>
 </ul>
 </div>
