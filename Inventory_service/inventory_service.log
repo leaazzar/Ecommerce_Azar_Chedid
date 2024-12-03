@@ -335,3 +335,32 @@
 2024-12-02 20:38:01,534 - INFO - Fetched 2 goods from inventory.
 2024-12-02 20:38:01,536 - INFO - 172.18.0.5 - - [02/Dec/2024 20:38:01] "GET /api/v1/inventory HTTP/1.1" 200 -
 >>>>>>> bbfcfa5bc3969dcf565922857d6f5d9e26eba847
+2024-12-02 22:42:15,924 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-02 22:42:15,926 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 22:52:34,111 - INFO - Request received to fetch all goods.
+2024-12-02 22:52:34,125 - INFO - Fetched 2 goods from inventory.
+2024-12-02 22:52:34,126 - INFO - 172.18.0.5 - - [02/Dec/2024 22:52:34] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 22:54:18,358 - INFO - Request received to fetch all goods.
+2024-12-02 22:54:18,361 - INFO - Fetched 2 goods from inventory.
+2024-12-02 22:54:18,362 - INFO - 172.18.0.5 - - [02/Dec/2024 22:54:18] "GET /api/v1/inventory HTTP/1.1" 200 -
+2024-12-02 23:52:08,075 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-02 23:52:08,076 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 23:53:13,875 - INFO - 172.18.0.5 - - [02/Dec/2024 23:53:13] "GET /api/v1/health HTTP/1.1" 200 -
+2024-12-02 23:57:01,977 - INFO - 172.18.0.5 - - [02/Dec/2024 23:57:01] "GET /api/v1/health HTTP/1.1" 200 -
+2024-12-03 00:06:31,409 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-03 00:06:31,410 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 00:06:37,255 - INFO - 172.18.0.5 - - [03/Dec/2024 00:06:37] "GET /api/v1/health HTTP/1.1" 200 -
+2024-12-03 00:17:37,487 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://172.18.0.3:5002
+2024-12-03 00:17:37,492 - INFO - [33mPress CTRL+C to quit[0m

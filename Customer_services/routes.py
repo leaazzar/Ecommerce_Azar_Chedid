@@ -2,6 +2,8 @@ from flask import Blueprint, request, jsonify
 from models import Customer
 from db import db
 import logging
+from sqlalchemy.sql import text
+
 
 logging.basicConfig(
     filename='customers_service.log',
@@ -14,7 +16,20 @@ customers_bp = Blueprint('customers_bp', __name__)
 
 @customers_bp.route('/health', methods=['GET'])
 def health_check():
-    return jsonify({"status": "healthy"}), 200
+    try:
+        # Check database connection
+        db.session.execute(text('SELECT 1'))
+        database_status = "Healthy"
+    except Exception as e:
+        database_status = f"Unhealthy: {str(e)}"
+
+    # No external services to check in this service
+
+    return jsonify({
+        "database": database_status,
+        "status": "Healthy" if database_status == "Healthy" else "Unhealthy"
+    })
+
 
 @customers_bp.route('/customers', methods=['POST'])
 def register_customer():

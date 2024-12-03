@@ -3,6 +3,8 @@ from models import db, Review
 import requests
 import os
 import logging
+from sqlalchemy.sql import text
+
 
 logging.basicConfig(
     filename='reviews_service.log',  # Log file name
@@ -38,7 +40,35 @@ def item_exists(item_name):
 
 @reviews_bp.route('/health', methods=['GET'])
 def health_check():
-    return jsonify({"status": "healthy"}), 200
+    try:
+        # Check database connection
+        db.session.execute(text('SELECT 1'))
+        database_status = "Healthy"
+    except Exception as e:
+        database_status = f"Unhealthy: {str(e)}"
+
+    # Check external services (Example: Customer Service and Inventory Service)
+    try:
+        customer_response = requests.get(f'{CUSTOMERS_SERVICE_URL}/health')
+        customer_service_status = "Healthy" if customer_response.status_code == 200 else "Unhealthy"
+    except Exception as e:
+        customer_service_status = f"Unhealthy: {str(e)}"
+
+    try:
+        inventory_response = requests.get(f'{INVENTORY_SERVICE_URL}/health')
+        inventory_service_status = "Healthy" if inventory_response.status_code == 200 else "Unhealthy"
+    except Exception as e:
+        inventory_service_status = f"Unhealthy: {str(e)}"
+
+    # Aggregate results
+    overall_status = "Healthy" if database_status == "Healthy" and customer_service_status == "Healthy" and inventory_service_status == "Healthy" else "Unhealthy"
+
+    return jsonify({
+        "database": database_status,
+        "customer_service": customer_service_status,
+        "inventory_service": inventory_service_status,
+        "status": overall_status
+    })
 
 @reviews_bp.route('/')
 def home():

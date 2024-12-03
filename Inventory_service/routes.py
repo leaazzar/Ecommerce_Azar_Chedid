@@ -2,6 +2,7 @@ import logging
 from flask import Blueprint, request, jsonify
 from models import Inventory
 from db import db
+from sqlalchemy.sql import text
 
 
 inventory_bp = Blueprint('inventory', __name__)
@@ -14,7 +15,19 @@ logging.basicConfig(
 
 @inventory_bp.route('/health', methods=['GET'])
 def health_check():
-    return jsonify({"status": "healthy"}), 200
+    try:
+        # Check database connection
+        db.session.execute(text('SELECT 1'))
+        database_status = "Healthy"
+    except Exception as e:
+        database_status = f"Unhealthy: {str(e)}"
+
+    # No external services to check in this service
+
+    return jsonify({
+        "database": database_status,
+        "status": "Healthy" if database_status == "Healthy" else "Unhealthy"
+    })
 
 @inventory_bp.route('/', methods=['GET'])
 def default_route():

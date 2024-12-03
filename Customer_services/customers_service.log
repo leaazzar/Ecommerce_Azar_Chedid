@@ -268,3 +268,42 @@
 2024-12-02 20:38:01,506 - INFO - Customer fetched by username: pia123
 2024-12-02 20:38:01,508 - INFO - 172.18.0.5 - - [02/Dec/2024 20:38:01] "GET /api/v1/customers/pia123 HTTP/1.1" 200 -
 >>>>>>> bbfcfa5bc3969dcf565922857d6f5d9e26eba847
+2024-12-02 22:42:15,881 - INFO - Database tables initialized.
+2024-12-02 22:42:15,929 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-02 22:42:15,930 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 22:51:11,673 - WARNING - Customer not found: non_existent
+2024-12-02 22:51:11,675 - INFO - 172.18.0.5 - - [02/Dec/2024 22:51:11] "[33mGET /api/v1/customers/non_existent HTTP/1.1[0m" 404 -
+2024-12-02 22:51:55,761 - WARNING - Customer not found: john_doe
+2024-12-02 22:51:55,762 - INFO - 172.18.0.5 - - [02/Dec/2024 22:51:55] "[33mGET /api/v1/customers/john_doe HTTP/1.1[0m" 404 -
+2024-12-02 22:52:02,402 - WARNING - Customer not found: lea
+2024-12-02 22:52:02,403 - INFO - 172.18.0.5 - - [02/Dec/2024 22:52:02] "[33mGET /api/v1/customers/lea HTTP/1.1[0m" 404 -
+2024-12-02 22:52:24,862 - WARNING - Username already taken: pia
+2024-12-02 22:52:24,863 - INFO - 172.18.0.1 - - [02/Dec/2024 22:52:24] "[31m[1mPOST /api/v1/customers HTTP/1.1[0m" 400 -
+2024-12-02 22:52:34,103 - INFO - Customer fetched by username: pia
+2024-12-02 22:52:34,103 - INFO - 172.18.0.5 - - [02/Dec/2024 22:52:34] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-02 22:54:18,348 - INFO - Customer fetched by username: pia
+2024-12-02 22:54:18,349 - INFO - 172.18.0.5 - - [02/Dec/2024 22:54:18] "GET /api/v1/customers/pia HTTP/1.1" 200 -
+2024-12-02 23:52:08,008 - INFO - Database tables initialized.
+2024-12-02 23:52:08,034 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-02 23:52:08,035 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-02 23:53:13,867 - INFO - 172.18.0.5 - - [02/Dec/2024 23:53:13] "GET /api/v1/health HTTP/1.1" 200 -
+2024-12-02 23:57:01,960 - INFO - 172.18.0.5 - - [02/Dec/2024 23:57:01] "GET /api/v1/health HTTP/1.1" 200 -
+2024-12-03 00:06:31,381 - INFO - Database tables initialized.
+2024-12-03 00:06:31,399 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-03 00:06:31,405 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-03 00:06:37,250 - INFO - 172.18.0.5 - - [03/Dec/2024 00:06:37] "GET /api/v1/health HTTP/1.1" 200 -
+2024-12-03 00:17:37,416 - INFO - Database tables initialized.
+2024-12-03 00:17:37,450 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.2:5001
+2024-12-03 00:17:37,450 - INFO - [33mPress CTRL+C to quit[0m
