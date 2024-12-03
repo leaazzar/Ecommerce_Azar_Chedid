@@ -19,6 +19,16 @@ INVENTORY_SERVICE_URL = os.getenv('INVENTORY_SERVICE_URL', 'http://ecommerce_aza
 CUSTOMERS_SERVICE_URL = os.getenv('CUSTOMERS_SERVICE_URL', 'http://ecommerce_azar_chedid-customers_service-1:5001/api/v1')
 @sales_bp.route('/health', methods=['GET'])
 def health_check():
+    """
+    Health check endpoint.
+
+    This route checks the health of the sales service, including:
+    - Database connectivity.
+    - Health of external services (Inventory Service and Customer Service).
+
+    :return: JSON object indicating the health status of the database and external services.
+    :rtype: flask.Response
+    """
     try:
         # Check database connection
         db.session.execute(text('SELECT 1'))
@@ -51,11 +61,27 @@ def health_check():
 
 @sales_bp.route('/')
 def home():
+    """
+    Default route.
+
+    Returns a welcome message for the Sales Service.
+
+    :return: JSON object with a welcome message.
+    :rtype: flask.Response
+    """
     logging.info("Accessed the home route.")
     return jsonify({"message": "Welcome to the Sales Service!"})
 
 @sales_bp.route('/goods', methods=['GET'])
 def get_goods():
+    """
+    Retrieve all available goods from the Inventory Service.
+
+    This route fetches goods with positive stock counts from the Inventory Service.
+
+    :return: JSON object containing a list of goods or an error message.
+    :rtype: flask.Response
+    """
     try:
         logging.info("Fetching goods from the Inventory service.")
         inventory_response = requests.get(f'{INVENTORY_SERVICE_URL}/inventory', timeout=5)
@@ -78,6 +104,15 @@ def get_goods():
 
 @sales_bp.route('/goods/<string:good_name>', methods=['GET'])
 def get_good_details(good_name):
+    """
+    Retrieve details of a specific good from the Inventory Service.
+
+    :param good_name: Name of the good to fetch details for.
+    :type good_name: str
+    :return: JSON object containing the item's details or an error message.
+    :rtype: flask.Response
+    """
+
     try:
         inventory_response = requests.get(f'{INVENTORY_SERVICE_URL}/inventory', timeout=5)
         inventory_response.raise_for_status()
@@ -103,6 +138,23 @@ def get_good_details(good_name):
 
 @sales_bp.route('/sales', methods=['POST'])
 def create_sale():
+    """
+    Create a sale transaction.
+
+    This route performs the following operations:
+    - Validates request data.
+    - Deducts the total price from the customer's wallet.
+    - Updates the inventory count for the sold item.
+    - Records the sale in the database.
+
+    :request body: JSON object containing:
+        - customer_username (str): Username of the customer (required).
+        - item_name (str): Name of the item to be sold (required).
+        - quantity (int): Quantity of the item to be sold (required).
+
+    :return: JSON object with the sale confirmation or an error message.
+    :rtype: flask.Response
+    """
     try:
         # Log the incoming request
         data = request.json
@@ -224,6 +276,16 @@ def create_sale():
     
 @sales_bp.route('/customers/<username>/purchases', methods=['GET'])
 def get_purchase_history(username):
+    """
+    Retrieve purchase history for a specific customer.
+
+    Fetches a list of all purchases made by a customer.
+
+    :param username: Username of the customer.
+    :type username: str
+    :return: JSON object containing the purchase history or an error message.
+    :rtype: flask.Response
+    """
     try:
         # Log the incoming request
         logging.info(f"Received request to fetch purchase history for customer: {username}")

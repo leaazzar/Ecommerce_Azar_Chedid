@@ -15,6 +15,15 @@ logging.basicConfig(
 
 @inventory_bp.route('/health', methods=['GET'])
 def health_check():
+    """
+    Health check endpoint.
+
+    This route checks the health of the inventory service, including database connectivity.
+
+    :return: JSON object indicating the health status of the database and overall service.
+    :rtype: flask.Response
+    """
+
     try:
         # Check database connection
         db.session.execute(text('SELECT 1'))
@@ -31,6 +40,15 @@ def health_check():
 
 @inventory_bp.route('/', methods=['GET'])
 def default_route():
+    """
+    Default route.
+
+    Returns a welcome message for the Inventory Service.
+
+    :return: JSON object with a welcome message.
+    :rtype: flask.Response
+    """
+
     try:
         logging.info("Default route accessed.")
         return {"message": "Welcome to the Inventory Service!"}, 200
@@ -40,6 +58,22 @@ def default_route():
 
 @inventory_bp.route('/inventory', methods=['POST'])
 def add_goods():
+    """
+    Add a new item to the inventory.
+
+    Validates and adds a new item to the inventory database.
+
+    :request body: JSON object containing:
+        - name (str): Name of the item (required).
+        - category (str): Category of the item (required).
+        - price_per_item (float): Price per unit (required).
+        - count_in_stock (int): Stock count (required).
+        - description (str, optional): Description of the item.
+
+    :return: JSON object with a success message or error details.
+    :rtype: flask.Response
+    """
+
     try:
         logging.info("Request received to add a new good.")
         data = request.json
@@ -85,6 +119,17 @@ def add_goods():
 
 @inventory_bp.route('/inventory/<int:item_id>', methods=['DELETE'])
 def delete_goods(item_id):
+    """
+    Delete an item from the inventory.
+
+    Deletes an item from the database based on its ID.
+
+    :param item_id: ID of the item to delete.
+    :type item_id: int
+    :return: JSON object with a success message or error details.
+    :rtype: flask.Response
+    """
+
     try:
         logging.info(f"Request received to delete item with ID: {item_id}")
         item = Inventory.query.get(item_id)
@@ -103,6 +148,19 @@ def delete_goods(item_id):
         return {"error": f"An unexpected error occurred: {str(e)}"}, 500
 
 def update_goods(item_id):
+    """
+    Update an item's details in the inventory.
+
+    Updates fields such as name, category, price_per_item, count_in_stock, and description
+    based on the request body.
+
+    :param item_id: ID of the item to update.
+    :type item_id: int
+    :request body: JSON object containing updated fields.
+    :return: JSON object with a success message or error details.
+    :rtype: flask.Response
+    """
+    
     try:
         logging.info(f"Request received to update item with ID: {item_id}")
         data = request.json
@@ -145,6 +203,14 @@ def update_goods(item_id):
     
 @inventory_bp.route('/inventory', methods=['GET'])
 def get_all_goods():
+    """
+    Retrieve all items from the inventory.
+
+    Fetches and returns a list of all items in the inventory.
+
+    :return: JSON object containing a list of items or a message indicating no items found.
+    :rtype: flask.Response
+    """
     try:
         logging.info("Request received to fetch all goods.")
         items = Inventory.query.all()

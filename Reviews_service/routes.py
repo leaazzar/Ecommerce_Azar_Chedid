@@ -40,6 +40,14 @@ def item_exists(item_name):
 
 @reviews_bp.route('/health', methods=['GET'])
 def health_check():
+    """
+    Default route for the Reviews Service.
+
+    Provides a welcome message for the service.
+
+    :return: JSON object with a welcome message.
+    :rtype: flask.Response
+    """
     try:
         # Check database connection
         db.session.execute(text('SELECT 1'))
@@ -72,11 +80,37 @@ def health_check():
 
 @reviews_bp.route('/')
 def home():
+    """
+    Default route for the Reviews Service.
+
+    Provides a welcome message for the service.
+
+    :return: JSON object with a welcome message.
+    :rtype: flask.Response
+    """
     logging.info("Accessed home route.")
     return jsonify({"message": "Welcome to the Reviews Service!"})
 
 @reviews_bp.route('/', methods=['POST'])
 def submit_review():
+    """
+    Submit a new review.
+
+    This route allows users to submit reviews for items, which are initially marked as "pending."
+    Validations include:
+    - Checking required fields.
+    - Ensuring the rating is an integer between 1 and 5.
+    - Verifying that the customer and item exist.
+
+    :request body: JSON object with the following fields:
+        - customer_username (str): Username of the customer submitting the review (required).
+        - item_name (str): Name of the item being reviewed (required).
+        - rating (int): Rating of the item (1-5, required).
+        - comment (str): Comment about the item (required).
+
+    :return: JSON object with a success message and the review ID, or an error message.
+    :rtype: flask.Response
+    """
     try:
         data = request.get_json()
         logging.info(f"Received review submission: {data}")
@@ -123,6 +157,21 @@ def submit_review():
     
 @reviews_bp.route('/<int:review_id>', methods=['PUT'])
 def update_review(review_id):
+    """
+    Update an existing review.
+
+    Allows users to update the rating and/or comment of a review they submitted.
+    The status is reset to "pending" after an update.
+
+    :param review_id: ID of the review to update.
+    :type review_id: int
+    :request body: JSON object with optional fields:
+        - rating (int): Updated rating (1-5).
+        - comment (str): Updated comment.
+
+    :return: JSON object with a success message, or an error message.
+    :rtype: flask.Response
+    """
     try:
         data = request.get_json()
         logging.info(f"Updating review ID {review_id} with data: {data}")
@@ -159,6 +208,18 @@ def update_review(review_id):
     
 @reviews_bp.route('/<int:review_id>', methods=['DELETE'])
 def delete_review(review_id):
+    """
+    Delete a review.
+
+    Allows users to delete a review they submitted. The user's username must be provided
+    as a query parameter to verify authorization.
+
+    :param review_id: ID of the review to delete.
+    :type review_id: int
+    :query param customer_username: Username of the customer requesting deletion (required).
+    :return: JSON object with a success message, or an error message.
+    :rtype: flask.Response
+    """
     try:
         # Log the incoming delete request
         logging.info(f"Received request to delete review with ID: {review_id}")
@@ -196,6 +257,16 @@ def delete_review(review_id):
 
 @reviews_bp.route('/product/<string:item_name>', methods=['GET'])
 def get_product_reviews(item_name):
+    """
+    Retrieve all approved reviews for a specific product.
+
+    Fetches and returns only reviews that are approved for the given item.
+
+    :param item_name: Name of the item whose reviews are to be fetched.
+    :type item_name: str
+    :return: JSON object with a list of reviews or an appropriate message.
+    :rtype: flask.Response
+    """
     try:
         # Log the incoming request
         logging.info(f"Received request to fetch reviews for product: {item_name}")
@@ -222,6 +293,17 @@ def get_product_reviews(item_name):
 
 @reviews_bp.route('/customer/<string:customer_username>', methods=['GET'])
 def get_customer_reviews(customer_username):
+    """
+    Retrieve all reviews submitted by a specific customer.
+
+    Fetches and returns all reviews (approved, pending, or rejected) submitted by the customer.
+
+    :param customer_username: Username of the customer whose reviews are to be fetched.
+    :type customer_username: str
+    :return: JSON object with a list of reviews or an appropriate message.
+    :rtype: flask.Response
+    """
+
     try:
         # Log the incoming request
         logging.info(f"Received request to fetch reviews for customer: {customer_username}")
@@ -248,6 +330,19 @@ def get_customer_reviews(customer_username):
 
 @reviews_bp.route('/<int:review_id>/moderate', methods=['PUT'])
 def moderate_review(review_id):
+    """
+    Moderate a review.
+
+    Updates the status of a review to either "approved" or "rejected."
+
+    :param review_id: ID of the review to moderate.
+    :type review_id: int
+    :request body: JSON object with the following field:
+        - status (str): New status for the review ("approved" or "rejected", required).
+
+    :return: JSON object with a success message, or an error message.
+    :rtype: flask.Response
+    """
     try:
         # Log the incoming moderation request
         logging.info(f"Received request to moderate review with ID: {review_id}")
@@ -285,6 +380,16 @@ def moderate_review(review_id):
 
 @reviews_bp.route('/<int:review_id>', methods=['GET'])
 def get_review_details(review_id):
+    """
+    Retrieve details of a specific review.
+
+    Fetches and returns the details of the review with the specified ID.
+
+    :param review_id: ID of the review to retrieve.
+    :type review_id: int
+    :return: JSON object with the review details, or an error message.
+    :rtype: flask.Response
+    """
     try:
         # Log the incoming request
         logging.info(f"Received request to fetch details for review with ID: {review_id}")

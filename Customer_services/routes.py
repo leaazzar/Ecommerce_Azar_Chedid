@@ -16,6 +16,19 @@ customers_bp = Blueprint('customers_bp', __name__)
 
 @customers_bp.route('/health', methods=['GET'])
 def health_check():
+    """
+    Health Check Endpoint.
+
+    **Method:** GET
+
+    Checks the health of the database connection.
+
+    **Returns:**
+        JSON: {
+            "database": "Healthy" or error message,
+            "status": "Healthy" or "Unhealthy"
+        }
+    """
     try:
         # Check database connection
         db.session.execute(text('SELECT 1'))
@@ -33,6 +46,28 @@ def health_check():
 
 @customers_bp.route('/customers', methods=['POST'])
 def register_customer():
+    """
+    Register a New Customer.
+
+    **Method:** POST
+
+    Registers a new customer in the database.
+
+    **Request JSON Parameters:**
+        - `username` (str): Unique username for the customer.
+        - `full_name` (str): Full name of the customer.
+        - `password` (str): Password for the customer account.
+        - `age` (int, optional): Age of the customer.
+        - `address` (str, optional): Address of the customer.
+        - `gender` (str, optional): Gender ('Male', 'Female', or 'Other').
+        - `marital_status` (str, optional): Marital status of the customer.
+
+    **Returns:**
+        - 201: Successful registration message.
+        - 400: Validation errors.
+        - 500: Internal server error.
+    """
+    
     try:
         data = request.json
         if data is None:
@@ -87,6 +122,22 @@ def register_customer():
 
 @customers_bp.route('/customers', methods=['GET'])
 def get_all_customers():
+    """
+    Get Customer by Username.
+
+    **Method:** GET
+
+    Fetches details of a specific customer by their username.
+
+    **Parameters:**
+        - `username` (str): Username of the customer.
+
+    **Returns:**
+        - 200: Customer details.
+        - 404: Customer not found.
+        - 500: Internal server error.
+    """
+   
     try:
         customers = Customer.query.all()
         if not customers:
@@ -111,6 +162,25 @@ def get_all_customers():
 
 @customers_bp.route('/customers/<username>', methods=['GET'])
 def get_customer_by_username(username):
+    """
+    Update Customer Information.
+
+    **Method:** PUT
+
+    Updates the details of an existing customer.
+
+    **Parameters:**
+        - `username` (str): Username of the customer.
+
+    **Request JSON Parameters:**
+        - Any field to be updated (`full_name`, `password`, `age`, `address`, `gender`, `marital_status`).
+
+    **Returns:**
+        - 200: Success message.
+        - 400: Validation errors.
+        - 404: Customer not found.
+        - 500: Internal server error.
+    """
     try:
         customer = Customer.query.filter_by(username=username).first()
         if not customer:
@@ -131,6 +201,21 @@ def get_customer_by_username(username):
     
 @customers_bp.route('/customers/<username>', methods=['PUT'])
 def update_customer(username):
+    """
+    Delete a Customer.
+
+    **Method:** DELETE
+
+    Deletes a specific customer from the database.
+
+    **Parameters:**
+        - `username` (str): Username of the customer.
+
+    **Returns:**
+        - 200: Success message.
+        - 404: Customer not found.
+        - 500: Internal server error.
+    """
     try:
         data = request.json
         if not data or not isinstance(data, dict):
@@ -185,6 +270,25 @@ def update_customer(username):
 
 @customers_bp.route('/customers/<username>', methods=['DELETE'])
 def delete_customer(username):
+    """
+    Charge Customer Wallet.
+
+    **Method:** POST
+
+    Adds a specified amount to the customer's wallet.
+
+    **Parameters:**
+        - `username` (str): Username of the customer.
+
+    **Request JSON Parameters:**
+        - `amount` (float): Amount to add.
+
+    **Returns:**
+        - 200: Success message.
+        - 400: Validation errors.
+        - 404: Customer not found.
+        - 500: Internal server error.
+    """
     try:
         # Log the delete request
         logging.info(f"Received request to delete customer: {username}")
@@ -216,6 +320,26 @@ def delete_customer(username):
 
 @customers_bp.route('/customers/<username>/charge', methods=['POST'])
 def charge_wallet(username):
+    """
+    Deduct Customer Wallet.
+
+    **Method:** POST
+
+    Deducts a specified amount from the customer's wallet.
+
+    **Parameters:**
+        - `username` (str): Username of the customer.
+
+    **Request JSON Parameters:**
+        - `amount` (float): Amount to deduct.
+
+    **Returns:**
+        - 200: Success message.
+        - 400: Validation errors.
+        - 404: Customer not found.
+        - 400: Insufficient funds.
+        - 500: Internal server error.
+    """
     try:
         # Log the request
         logging.info(f"Received request to charge wallet for customer: {username}")

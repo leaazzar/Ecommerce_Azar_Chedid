@@ -1,13 +1,27 @@
 # models.py
+"""
+Database Models for the Reviews Service.
 
+This module contains SQLAlchemy models representing the database schema for the service.
+"""
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 db = SQLAlchemy()
 
 class Review(db.Model):
-    __tablename__ = 'reviews'
+    """
+    Represents a review for a product.
 
+    Attributes:
+        id (int): Unique identifier for the review (primary key).
+        customer_username (str): Username of the customer who submitted the review.
+        item_name (str): Name of the item being reviewed.
+        rating (int): Rating given to the item (1-5).
+        comment (str): Comment provided by the customer.
+        status (str): Moderation status of the review (e.g., "pending", "approved", "rejected").
+    """
+    __tablename__ = 'reviews'
     id = db.Column(db.Integer, primary_key=True)
     customer_username = db.Column(db.String(80), nullable=False)
     item_name = db.Column(db.String(100), nullable=False)

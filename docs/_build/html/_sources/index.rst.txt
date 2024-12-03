@@ -1,0 +1,12 @@
+.. Ecommerce Project documentation master file
+
+Welcome to the Ecommerce Project documentation!
+================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   
+   routes
+   models

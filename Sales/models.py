@@ -1,8 +1,22 @@
+"""
+Database Models for the sales Service.
+
+This module contains SQLAlchemy models representing the database schema for the service.
+"""
 from db import db
 
 class Purchase(db.Model):
+    """
+    Represents a purchase made by a customer.
+
+    Attributes:
+        id (int): Unique identifier for the purchase (primary key).
+        customer_username (str): Username of the customer who made the purchase.
+        item_name (str): Name of the item purchased.
+        quantity (int): Quantity of the item purchased.
+        total_price (float): Total price of the purchase.
+    """
     __tablename__ = 'purchases'
-    
     purchase_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     customer_username = db.Column(db.String(80), nullable=False)
     item_name = db.Column(db.String(80), nullable=False)
